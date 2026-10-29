@@ -1,6 +1,6 @@
 # Mustang Garage
 
-![Mustang Garage — cinematic hero and classic editorial typography](MustangeCharger/HeroReadme.png)
+![Mustang Garage — cinematic hero and classic editorial typography](MustangeCharger/Mustang%20Garage.png)
 
 <p align="center">
   <strong>Rare machines. Open roads. Stories worth keeping.</strong><br>
