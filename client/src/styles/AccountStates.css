@@ -88,7 +88,7 @@
 .mg-admin .mg-signout--admin:hover { color: #ffebd0; background: #493622; border-color: #c19c6d; }
 @keyframes mg-account-spin { to { transform: rotate(360deg); } }
 @keyframes mg-record-sheen { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
-@media (max-width: 1400px) {
+@media (max-width: 1024px) {
   .mg-navbar .mg-signout--nav { width: fit-content; margin-top: 14px; padding-inline: 18px; }
 }
 @media (max-width: 600px) {

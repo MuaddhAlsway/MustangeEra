@@ -13,7 +13,7 @@ export default function Navbar({ savedCount = 0 }: NavbarProps) {
   const toggleRef=useRef<HTMLButtonElement>(null);
   useEffect(()=>{
     if(!menuOpen)return;
-    const mobile=window.matchMedia('(max-width: 1400px)');
+    const mobile=window.matchMedia('(max-width: 1024px)');
     const previousOverflow=document.body.style.overflow;
     if(mobile.matches)document.body.style.overflow='hidden';
     const onKeyDown=(event:KeyboardEvent)=>{if(event.key==='Escape'){setMenuOpen(false);toggleRef.current?.focus();}};
@@ -33,7 +33,8 @@ export default function Navbar({ savedCount = 0 }: NavbarProps) {
         onClick={closeMenu}
       >
         <span className="mg-navbar__mark" aria-hidden="true">
-          <img className="mg-navbar__car-icon" src="/muscle-car.svg" alt="" width={40} height={40}/>
+          <span className="mg-navbar__mark-letter">M</span>
+          <span className="mg-navbar__mark-lines"><i/><i/><i/></span>
         </span>
 
         <span className="mg-navbar__wordmark">
