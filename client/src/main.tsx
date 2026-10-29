@@ -5,6 +5,7 @@ import { AuthProvider } from './lib/Auth';
 import { PublicDataProvider } from './lib/PublicData';
 import App from './App.tsx'
 import './styles/Typography.css'
+import './styles/GarageImage.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

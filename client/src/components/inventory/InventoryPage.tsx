@@ -4,6 +4,8 @@ import type { Car } from '../../features/inventory/types';
 import '../../styles/InventoryPage.css';
 import FeaturedCollection from '../Home/FeaturedCollection';
 import { usePublicData } from '../../lib/publicContext';
+import GarageImage from '../common/GarageImage';
+import { assetUrl } from '../../lib/api';
 
 type InventoryPageProps = {
   cars: Car[];
@@ -24,7 +26,7 @@ export default function InventoryPage({
   return (
     <main className="mg-inventory-page">
       <header className="mg-inventory-hero">
-        <div className="mg-inventory-hero__image" aria-hidden="true" style={{ backgroundImage: `url("${hero?.image||inventoryHero}")` }} />
+        <GarageImage className="mg-inventory-hero__image" src={assetUrl(hero?.image||inventoryHero)} alt="" aria-hidden="true" priority />
        
 
         <div className="mg-inventory-hero__content">

@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Heart } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import type { Car } from '../../features/inventory/types';
+import GarageImage from '../common/GarageImage';
 import '../../styles/CarDetailsPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -110,7 +111,7 @@ export default function CarDetailsPage({ cars, savedIds, onToggleSaved, onAskAbo
       </header>
 
       <figure className="mg-car-detail__cover">
-        <img src={car.image} alt={`${car.year} ${car.make} ${car.model}`} fetchPriority="high" />
+        <GarageImage src={car.image} alt={`${car.year} ${car.make} ${car.model}`} fetchPriority="high" />
         <div className="mg-car-detail__cover-shade" aria-hidden="true" />
         <span className="mg-car-detail__tag">{car.tag}</span>
         <span className="mg-car-detail__cover-year" aria-hidden="true">{car.year}</span>
@@ -165,7 +166,7 @@ export default function CarDetailsPage({ cars, savedIds, onToggleSaved, onAskAbo
       </section>
 
       {nextCar && <Link className="mg-car-detail__next" to={`/inventory/${nextCar.id}`}>
-        <img src={nextCar.image} alt="" loading="lazy" />
+        <GarageImage src={nextCar.image} alt="" />
         <div><span>THE NEXT MACHINE / KEEP EXPLORING</span><p>{nextCar.year} {nextCar.make}</p><h2>{nextCar.model}</h2></div>
         <span className="mg-car-detail__next-arrow"><ArrowRight size={28} aria-hidden="true" /></span>
       </Link>}

@@ -1,6 +1,7 @@
 import { ArrowUpRight, Clock3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Car } from '../../features/inventory/types';
+import GarageImage from '../common/GarageImage';
 import '../../styles/RecentlyViewedCars.css';
 
 type RecentlyViewedCarsProps = {
@@ -61,7 +62,7 @@ export default function RecentlyViewedCars({
             key={car.id}
           >
             <div className="mg-recent__image">
-              <img
+              <GarageImage
                 src={car.image}
                 alt={`${car.year} ${car.make} ${car.model}`}
                 loading="lazy"

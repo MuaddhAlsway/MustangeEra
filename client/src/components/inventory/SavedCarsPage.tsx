@@ -1,6 +1,7 @@
 import { ArrowRight, Heart, Trash2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Car } from '../../features/inventory/types';
+import GarageImage from '../common/GarageImage';
 import '../../styles/SavedCarsPage.css';
 
 type SavedCarsPageProps = {
@@ -62,7 +63,7 @@ export default function SavedCarsPage({
                 className="mg-saved-card__image"
                 to={`/inventory/${car.id}`}
               >
-                <img
+                <GarageImage
                   src={car.image}
                   alt={`${car.year} ${car.make} ${car.model}`}
                   loading="lazy"

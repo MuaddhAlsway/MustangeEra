@@ -1,0 +1,29 @@
+.mg-image[data-image-state='loading'],
+.mg-image[data-image-state='error'] {
+  background-color: #23271f;
+  background-image:
+    radial-gradient(ellipse at 51% 76%, rgb(223 190 144 / 12%) 0 13%, transparent 13.5%),
+    linear-gradient(110deg, #22261e 8%, #353a2f 36%, #252a21 54%, #34392e 72%, #22261e 92%);
+  background-size: auto, 220% 100%;
+  animation: mg-image-shimmer 1.8s ease-in-out infinite;
+}
+
+.mg-image[data-image-state='loaded'] {
+  background: none;
+  animation: none;
+}
+
+.mg-image[data-image-state='error'] {
+  color: transparent;
+  font-size: 0;
+}
+
+@keyframes mg-image-shimmer {
+  from { background-position: center, 100% 0; }
+  to { background-position: center, -120% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mg-image[data-image-state='loading'],
+  .mg-image[data-image-state='error'] { animation: none; }
+}

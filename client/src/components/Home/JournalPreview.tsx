@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { usePublicData } from '../../lib/publicContext';
+import GarageImage from '../common/GarageImage';
 import '../../styles/JournalPreview.css';
 
 export default function JournalPreview() {
@@ -40,7 +41,7 @@ export default function JournalPreview() {
         <article className="mg-journal__feature">
           <Link className="mg-journal__feature-link" to={`/journal/${featured.slug}`}>
             <div className="mg-journal__feature-image">
-              <img src={featured.image} alt={featured.imageAlt} loading="lazy" />
+              <GarageImage src={featured.image} alt={featured.imageAlt} />
               <span className="mg-journal__feature-stamp">THE COVER STORY</span>
               <span className="mg-journal__feature-number" aria-hidden="true">{featured.number}</span>
               <span className="mg-journal__image-caption">AMERICAN IRON / THE ORIGINS ISSUE</span>
@@ -65,7 +66,7 @@ export default function JournalPreview() {
             <article className="mg-journal__story" key={story.number}>
               <Link className="mg-journal__story-link" to={`/journal/${story.slug}`}>
                 <div className="mg-journal__story-image">
-                  <img src={story.image} alt="" loading="lazy" />
+                  <GarageImage src={story.image} alt="" />
                   <span aria-hidden="true">{story.number}</span>
                 </div>
                 <div className="mg-journal__story-copy">

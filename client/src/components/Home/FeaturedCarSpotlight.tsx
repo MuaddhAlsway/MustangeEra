@@ -1,6 +1,7 @@
 import { ArrowUpRight, ArrowRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Car } from '../../features/inventory/types';
+import GarageImage from '../common/GarageImage';
 import '../../styles/FeaturedCarSpotlight.css';
 import { usePublicData } from '../../lib/publicContext';
 
@@ -36,7 +37,7 @@ export default function FeaturedCarSpotlight({ car, loading = false }: FeaturedC
 
       <div className="mg-spotlight__stage">
         <Link className="mg-spotlight__image" to={destination} aria-label={`View ${car.year} ${car.make} ${car.model}`}>
-          <img src={copy?.image||car.image} alt={copy?.imageAlt||`${car.year} ${car.make} ${car.model}`} loading="lazy" />
+          <GarageImage src={copy?.image||car.image} alt={copy?.imageAlt||`${car.year} ${car.make} ${car.model}`} />
           <span className="mg-spotlight__image-mark"><span>MUSTANG GARAGE</span><strong>MG / {file}</strong></span>
           <span className="mg-spotlight__image-year" aria-hidden="true">{car.year}</span>
           <span className="mg-spotlight__image-caption"><span>{car.tag} <i>/</i> {car.type}</span><span>OPEN THE MACHINE FILE <ArrowUpRight size={19} aria-hidden="true" /></span></span>

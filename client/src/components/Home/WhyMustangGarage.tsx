@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import garageImage from '../../assets/Collection090.webp';
 import '../../styles/WhyMustangGarage.css';
 import { usePublicData } from '../../lib/publicContext';
+import GarageImage from '../common/GarageImage';
 
 const principles = [
   {
@@ -46,7 +47,7 @@ export default function WhyMustangGarage() {
         </header>
 
         <figure className="mg-standard__visual">
-          <img src={copy?.image||garageImage} alt={copy?.image ? (copy.imageAlt||'Garage editorial image') : 'Mustang Shelby GT500 from the Mustang Garage collection'} loading="lazy" />
+          <GarageImage src={copy?.image||garageImage} alt={copy?.image ? (copy.imageAlt||'Garage editorial image') : 'Mustang Shelby GT500 from the Mustang Garage collection'} />
           <span className="mg-standard__image-index" aria-hidden="true">MG<br />/ 001</span>
           <span className="mg-standard__vertical" aria-hidden="true">CHARACTER CANNOT BE MASS-PRODUCED.</span>
           <figcaption><span>FROM THE GARAGE / COLLECTION STUDY</span><span>01 — THE ATTITUDE</span></figcaption>

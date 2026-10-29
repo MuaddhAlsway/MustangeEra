@@ -3,6 +3,7 @@ import type { KeyboardEvent } from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { mockInventory } from '../../features/inventory/mockInventory';
+import GarageImage from '../common/GarageImage';
 import '../../styles/CollectionFocus.css';
 
 const perspectives = [
@@ -50,7 +51,7 @@ export default function CollectionFocus() {
 
         <div className="mg-collection-focus__panel" role="tabpanel" id={`mg-focus-panel-${activeIndex}`} aria-labelledby={`mg-focus-tab-${activeIndex}`} tabIndex={0}>
           <div className="mg-collection-focus__frame" key={active.number}>
-            {car ? <img src={car.image} alt={`${car.year} ${car.make} ${car.model}`} loading="lazy" /> : <span className="mg-collection-focus__image-missing">IMAGE NOT AVAILABLE</span>}
+            {car ? <GarageImage src={car.image} alt={`${car.year} ${car.make} ${car.model}`} /> : <span className="mg-collection-focus__image-missing">IMAGE NOT AVAILABLE</span>}
             <span className="mg-collection-focus__frame-label">COLLECTION STUDY / {active.number}</span>
             <span className="mg-collection-focus__frame-number" aria-hidden="true">{active.number}</span>
             <span className="mg-collection-focus__frame-caption">{active.caption}</span>

@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Car } from '../../features/inventory/types';
+import GarageImage from '../common/GarageImage';
 import '../../styles/FeaturedCollection.css';
 
 type FeaturedCollectionProps = {
@@ -164,10 +165,9 @@ export default function FeaturedCollection({
                   onClick={() => onSelectCar(car)}
                   aria-label={`View ${car.year} ${car.make} ${car.model}`}
                 >
-                  <img
+                  <GarageImage
                     src={car.image}
                     alt={`${car.year} ${car.make} ${car.model}`}
-                    loading={index > 2 ? 'lazy' : 'eager'}
                   />
                   <span className="mg-car-card__index">
                     {String(index + 1).padStart(2, '0')}

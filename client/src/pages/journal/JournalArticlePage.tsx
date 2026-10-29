@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { journalContentNote } from '../../features/journal/stories';
 import { usePublicData } from '../../lib/publicContext';
+import GarageImage from '../../components/common/GarageImage';
 import '../../styles/JournalPages.css';
 
 export default function JournalArticlePage() {
@@ -21,7 +22,7 @@ export default function JournalArticlePage() {
       <div className="mg-journal-page__masthead"><Link className="mg-journal-page__back" to="/journal"><ArrowLeft size={16} aria-hidden="true" /> THE JOURNAL</Link><span>VOLUME 01 / STORY {story.number}</span></div>
       <article aria-labelledby="mg-journal-article-title">
         <header className="mg-journal-page__article-heading"><p className="mg-journal-page__kicker">{story.category} <span>/</span> {story.readTime}</p><h1 id="mg-journal-article-title">{story.title}</h1><p>{story.excerpt}</p><span className="mg-journal-page__byline">BY THE GARAGE EDITORIAL / SAMPLE ESSAY</span></header>
-        <figure className="mg-journal-page__article-cover"><img src={story.image} alt={story.imageAlt} fetchPriority="high" /><figcaption>INVENTORY IMAGE / EDITORIAL ILLUSTRATION <span>MG / {story.number}</span></figcaption></figure>
+        <figure className="mg-journal-page__article-cover"><GarageImage src={story.image} alt={story.imageAlt} fetchPriority="high" /><figcaption>INVENTORY IMAGE / EDITORIAL ILLUSTRATION <span>MG / {story.number}</span></figcaption></figure>
         <div className="mg-journal-page__reading-layout">
           <aside className="mg-journal-page__contents" aria-label="Article contents"><span>IN THIS STORY</span><nav aria-label="Article sections">{story.body.map((section, index) => <a href={`#journal-section-${index + 1}`} key={section.heading}><span>{String(index + 1).padStart(2, '0')}</span>{section.heading}</a>)}</nav><p>{story.readTime} / SAMPLE EDITORIAL</p></aside>
           <div className="mg-journal-page__body">
@@ -31,7 +32,7 @@ export default function JournalArticlePage() {
           </div>
         </div>
       </article>
-      <section className="mg-journal-page__related" aria-labelledby="mg-journal-related-title"><div className="mg-journal-page__section-heading"><h2 id="mg-journal-related-title">KEEP READING.</h2><span>ANOTHER ROAD. ANOTHER STORY.</span></div><div className="mg-journal-page__related-grid">{related.map(article => <Link to={`/journal/${article.slug}`} key={article.slug}><img src={article.image} alt="" loading="lazy" /><div><p className="mg-journal-page__kicker">{article.category}</p><h3>{article.title}</h3><span>{article.readTime} <ArrowUpRight size={18} aria-hidden="true" /></span></div></Link>)}</div></section>
+      <section className="mg-journal-page__related" aria-labelledby="mg-journal-related-title"><div className="mg-journal-page__section-heading"><h2 id="mg-journal-related-title">KEEP READING.</h2><span>ANOTHER ROAD. ANOTHER STORY.</span></div><div className="mg-journal-page__related-grid">{related.map(article => <Link to={`/journal/${article.slug}`} key={article.slug}><GarageImage src={article.image} alt="" /><div><p className="mg-journal-page__kicker">{article.category}</p><h3>{article.title}</h3><span>{article.readTime} <ArrowUpRight size={18} aria-hidden="true" /></span></div></Link>)}</div></section>
     </main>
   );
 }

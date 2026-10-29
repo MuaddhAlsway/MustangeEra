@@ -6,6 +6,7 @@ import Hero01 from '../../assets/Hero01.webp'
 import Hero02 from '../../assets/Hero030.webp'
 import Hero03 from '../../assets/Hero03.webp'
 import { usePublicData } from '../../lib/publicContext';
+import GarageImage from './GarageImage';
 
 type HeroSlide = {
   image: string;
@@ -210,7 +211,7 @@ export default function Hero() {
       aria-roledescription="carousel"
       aria-label="Featured muscle cars"
     >
-      <img
+      <GarageImage
         className="mg-hero__image"
         src={activeSlide.image||custom?.image||slides[activeIndex].image}
         alt={`${activeSlide.year} ${activeSlide.model}`}
