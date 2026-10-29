@@ -1,74 +1,331 @@
 # Mustang Garage
 
-React/Vite frontend and Express/MongoDB API for Mustang Garage. The API keeps inventory, published page content, journal articles, mailing-list subscribers, contact inquiries, email replies, and admin activity in MongoDB. Existing images are project URLs; admin uploads are persisted in MongoDB GridFS and also exposed as URLs. No separate image-hosting service is used.
+![Mustang Garage — cinematic hero and classic editorial typography](MustangeCharger/HeroReadme.png)
 
-## Requirements and installation
+<p align="center">
+  <strong>Rare machines. Open roads. Stories worth keeping.</strong><br>
+  An automotive journal, a curated collection, and the workspace behind it.
+</p>
 
-- Node.js 22 or newer
-- MongoDB locally or an accessible MongoDB deployment
+<p align="center">
+  <img alt="React 19" src="https://img.shields.io/badge/React_19-20291e?style=flat-square&amp;logo=react&amp;logoColor=e5c49c">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-20291e?style=flat-square&amp;logo=typescript&amp;logoColor=e5c49c">
+  <img alt="Express" src="https://img.shields.io/badge/Express-20291e?style=flat-square&amp;logo=express&amp;logoColor=e5c49c">
+  <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-20291e?style=flat-square&amp;logo=mongodb&amp;logoColor=e5c49c">
+  <img alt="Clerk" src="https://img.shields.io/badge/Clerk-20291e?style=flat-square&amp;logo=clerk&amp;logoColor=e5c49c">
+  <img alt="Resend" src="https://img.shields.io/badge/Resend-20291e?style=flat-square&amp;logo=resend&amp;logoColor=e5c49c">
+</p>
 
-Install dependencies from each app directory:
+<p align="center">
+  <a href="#the-project">The project</a> &nbsp; / &nbsp;
+  <a href="#screenshots">Screenshots</a> &nbsp; / &nbsp;
+  <a href="#run-locally">Run locally</a> &nbsp; / &nbsp;
+  <a href="#configuration">Configuration</a> &nbsp; / &nbsp;
+  <a href="#deployment">Deployment</a>
+</p>
 
-```sh
-cd backend && npm install
-cd ../client && npm install
+---
+
+## The project
+
+Mustang Garage brings the feeling of a classic motoring magazine to a full-stack web application. Cinematic photography, expressive serif headlines, olive charcoal surfaces, warm ivory, and restrained copper accents carry the experience from the public collection to the admin desk.
+
+The frontend is built with React and TypeScript. An Express API stores inventory, editorial content, inquiries, subscriptions, and activity in MongoDB. Clerk handles accounts; the backend verifies administrator access.
+
+### For the collector
+
+| Experience | What it includes |
+| --- | --- |
+| **The collection** | Search by marque, model, or year; make and era filters; sorting; individual machine files. |
+| **The journal** | Cover stories, an editorial index, and article pages with readable long-form layouts. |
+| **My garage** | A protected account dashboard, profile management, saved machines, and recently viewed cars. |
+| **The conversation** | Contact-page and popup forms, optional car inquiries, and server-confirmed submission feedback. |
+| **The experience** | GSAP and ScrollTrigger motion, responsive navigation, keyboard focus states, and reduced-motion support. |
+
+Wishlist selections currently last for the browsing session. Recently viewed cars use local browser storage when available.
+
+### Behind the garage
+
+The protected admin workspace includes inventory management, structured page editing, journal publishing, media uploads, subscriber management and CSV export, an inquiry inbox, reply drafts, account records, and recorded activity.
+
+- **Publish deliberately.** Listed cars and published articles appear publicly. Page drafts preserve the last published version.
+- **Keep the conversation.** Contact inquiries remain in MongoDB, including when a notification email fails.
+- **Own the media.** Uploaded images are stored in MongoDB GridFS; published references prevent deletion.
+- **Authorize on the server.** A verified Clerk session and an email in `ADMIN_EMAILS` are required for admin APIs. Hiding a navbar link is not the access-control mechanism.
+
+## Screenshots
+
+All images below come from the checked-in [`MustangeCharger`](MustangeCharger/) folder. Select a preview to open the original screenshot.
+
+### The editorial workspace
+
+[![Mustang Garage admin overview](MustangeCharger/AdminOverView.png)](MustangeCharger/AdminOverView.png)
+
+<table>
+  <tr>
+    <td width="50%"><strong>Inventory desk</strong><br><br><a href="MustangeCharger/CarPageAdmin.png"><img src="MustangeCharger/CarPageAdmin.png" alt="Admin car inventory with listing controls" width="100%"></a></td>
+    <td width="50%"><strong>The conversation desk</strong><br><br><a href="MustangeCharger/InboxAdmin.png"><img src="MustangeCharger/InboxAdmin.png" alt="Admin contact inbox and inquiry list" width="100%"></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>Page content</strong><br><br><a href="MustangeCharger/ContentDesk.png"><img src="MustangeCharger/ContentDesk.png" alt="Structured page-content editor" width="100%"></a></td>
+    <td width="50%"><strong>The image archive</strong><br><br><a href="MustangeCharger/MediaAdminPage.png"><img src="MustangeCharger/MediaAdminPage.png" alt="Admin media library and image previews" width="100%"></a></td>
+  </tr>
+</table>
+
+### The public experience
+
+<details>
+<summary><strong>01 / Home — the complete editorial landing page</strong></summary>
+
+[![Mustang Garage full home page](MustangeCharger/HomePage.png)](MustangeCharger/HomePage.png)
+
+</details>
+
+<details>
+<summary><strong>02 / Inventory — the curated collection</strong></summary>
+
+[![Inventory page with search, filters, and car listings](MustangeCharger/InvertoryPage.png)](MustangeCharger/InvertoryPage.png)
+
+</details>
+
+<details>
+<summary><strong>03 / About — the story and standards behind the garage</strong></summary>
+
+[![About the Garage page](MustangeCharger/AboutPage.png)](MustangeCharger/AboutPage.png)
+
+</details>
+
+<details>
+<summary><strong>04 / Journal — stories beyond the specification sheet</strong></summary>
+
+[![The Garage Journal index](MustangeCharger/JournalPage.png)](MustangeCharger/JournalPage.png)
+
+</details>
+
+<details>
+<summary><strong>05 / Contact — start a conversation</strong></summary>
+
+[![Mustang Garage contact page and inquiry form](MustangeCharger/ContactPage.png)](MustangeCharger/ContactPage.png)
+
+</details>
+
+<details>
+<summary><strong>More from the control desk — forms, publishing, subscribers, and accounts</strong></summary>
+
+<table>
+  <tr>
+    <td width="50%"><strong>Add a machine</strong><br><br><a href="MustangeCharger/AddCarFormAdmin.png"><img src="MustangeCharger/AddCarFormAdmin.png" alt="Admin add-car form" width="100%"></a></td>
+    <td width="50%"><strong>Journal management</strong><br><br><a href="MustangeCharger/JornalPageAdmin.png"><img src="MustangeCharger/JornalPageAdmin.png" alt="Admin journal article list" width="100%"></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>Article editor</strong><br><br><a href="MustangeCharger/JornalFormPageAdmin.png"><img src="MustangeCharger/JornalFormPageAdmin.png" alt="Admin journal article editor" width="100%"></a></td>
+    <td width="50%"><strong>Mailing list</strong><br><br><a href="MustangeCharger/MailListAdmin.png"><img src="MustangeCharger/MailListAdmin.png" alt="Subscriber management and export controls" width="100%"></a></td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>Accounts</strong><br><br><a href="MustangeCharger/LisAccountManagmentAdmin.png"><img src="MustangeCharger/LisAccountManagmentAdmin.png" alt="Admin account-management list" width="100%"></a></td>
+  </tr>
+</table>
+
+</details>
+
+## Built with
+
+| Layer | Technology |
+| --- | --- |
+| Interface | React 19, TypeScript, Vite, React Router |
+| Design & motion | Component-scoped CSS, GSAP, ScrollTrigger, Lucide icons |
+| Typography | Cormorant Garamond · Manrope · IBM Plex Mono |
+| API | Node.js 22+, Express, TypeScript |
+| Persistence | MongoDB, Mongoose, GridFS |
+| Identity | Clerk sessions and backend email-allowlist authorization |
+| Email | Resend contact notifications and explicit admin replies |
+| Validation & protection | Zod, Helmet, CORS, form rate limits |
+| API tests | Node test runner, Supertest, MongoDB Memory Server |
+
+## Run locally
+
+**You need:** Node.js 22 or newer, an accessible MongoDB database, and Clerk keys from the same Clerk application.
+
+**1. Install dependencies from the repository root.**
+
+```bash
+npm --prefix backend ci
+npm --prefix client ci
 ```
 
-Copy `backend/.env.example` to `backend/.env` for server settings and to `client/.env.local` for client settings. These files are ignored by git. Replace all placeholders; never put `CLERK_SECRET_KEY` in a client environment file.
+**2. Create the local environment files.**
 
-## Configuration and service setup
+Copy [`backend/.env.example`](backend/.env.example) to `backend/.env`, and [`client/.env.example`](client/.env.example) to `client/.env.local`. Replace the placeholders using the configuration table below. Environment files are ignored by Git.
 
-- **MongoDB:** set `MONGODB_URI` to the database connection string. The API will fail startup without a working connection. For Atlas, create a database user under **Database Access** (this is separate from your Atlas account), use its password in the URI, URL-encode special characters in the password, and grant it `readWrite` on the selected database. Add the server's outgoing IP under **Network Access**.
-- **Clerk:** create a Clerk application and configure its sign-in and sign-up options. Put its secret key in `backend/.env` as `CLERK_SECRET_KEY`; put the publishable key in `client/.env.local` as `VITE_CLERK_PUBLISHABLE_KEY`. Add the exact administrator email addresses (comma-separated) to `ADMIN_EMAILS`. Admin access requires a verified Clerk email matching this server-side allowlist. Add local and production frontend origins as appropriate in Clerk's allowed origins/redirect configuration.
-- **CORS:** set `CLIENT_URL` to the exact frontend origin(s), comma-separated when needed. Wildcard origins are rejected in production.
-- **Resend (optional until replies are needed):** verify the sending domain in Resend, publish its required DNS records, then set `RESEND_API_KEY` and `RESEND_FROM_EMAIL` to a sender on that verified domain. Replies are sent only when an authenticated admin explicitly presses Send. Development tests use a fake provider and do not send email.
-- **Images:** no Cloudinary or other image-hosting credentials/dependencies are used. Existing project images are listed in the admin media library. Explicit admin uploads are stored persistently in the same MongoDB database using GridFS (8 MB maximum); uploaded images are served from the API. Deletion is blocked while a published car, article, or page references an image. MongoDB storage capacity applies.
+**3. Start the API and frontend in separate terminals.**
 
-## Run and seed
-
-In separate terminals:
-
-```sh
-cd backend && npm run dev
-cd client && npm run dev
+```bash
+# Terminal 1 — Express API
+npm --prefix backend run dev
 ```
 
-## Deploy (Render API + Vercel frontend)
-
-The repository includes a Render Blueprint (`render.yaml`) for the Express API and a Vercel SPA rewrite (`client/vercel.json`) for React Router routes.
-
-1. **Deploy the frontend to Vercel.** Import the repository, set the Vercel project **Root Directory** to `client`, and use the detected Vite framework with `npm run build` and `dist` output. Add `VITE_CLERK_PUBLISHABLE_KEY` from the same Clerk instance as the backend key. Deploy once and note the production origin (for example, `https://your-project.vercel.app`).
-2. **Deploy the backend to Render.** Create a Blueprint deployment from the repository root. In the prompted environment values, set `CLIENT_URL` to the exact Vercel origin (scheme and host, no trailing slash), `MONGODB_URI` to the existing MongoDB URI, `CLERK_SECRET_KEY` from that same Clerk instance, and `ADMIN_EMAILS` to verified administrator emails. The Blueprint sets the API health check to `/api/health`.
-3. **Connect Vercel to Render.** After Render provides the API URL, set Vercel `VITE_API_URL` to `https://<render-service>.onrender.com/api` and redeploy. Set it for Production and any Preview environments you use.
-4. **Allow the deployed origin in Clerk.** Add the Vercel production domain to the Clerk application's allowed origins/redirect URLs. If using a custom Vercel domain, use that exact origin for both Clerk and Render `CLIENT_URL`; add additional origins as a comma-separated list in Render when needed.
-5. **Set email variables if using contact notifications.** `RESEND_API_KEY` and `CONTACT_NOTIFICATION_EMAIL` are prompted by the Blueprint; the default sender is `Mustang Garage <onboarding@resend.dev>`. Resend's onboarding sender can notify only the Resend account email. Sending direct admin replies to arbitrary visitor addresses requires a verified sender domain.
-
-For MongoDB Atlas, allow connections from Render (Render free instances do not have a stable outbound IP; Atlas `0.0.0.0/0` is a broad-access tradeoff—use a strong database password and least-privilege database user). Keep all secret values in the hosting dashboards, never in Vercel variables prefixed with `VITE_`. Do not run the seed script during deployment: Render connects to the configured database as-is, preserving its existing content and draft publication states.
-
-The API listens on port 4000 by default. `npm run seed` in `server` copies the checked-in frontend inventory and journal into an empty collection as drafts and inserts missing page drafts. It is safe to rerun and does not replace existing records. After reviewing source data, `npm run seed -- --publish` explicitly marks initial car/article seed data published; use only if that is intended.
-
-Build and verification:
-
-```sh
-cd backend && npm test && npm run build
-cd client && npm run build && npm run lint
+```bash
+# Terminal 2 — Vite frontend
+npm --prefix client run dev
 ```
 
-## API overview
+Open [localhost:5173](http://localhost:5173). The API defaults to port `4000`; its readiness endpoint is [`/api/health`](http://localhost:4000/api/health).
 
-Public routes (MongoDB-backed): `GET /api/public/cars`, `GET /api/public/cars/:id`, `GET /api/public/articles`, `GET /api/public/articles/:slug`, `GET /api/public/pages/:key`, `POST /api/public/contact`, and `POST /api/public/newsletter`. Public queries expose only published/listed content; contact and newsletter submissions are validated and rate limited.
+### Optional seed data
 
-All `/api/admin/*` routes require a verified Clerk session and a verified email in `ADMIN_EMAILS`. Admin resources include paginated/searchable `GET /cars`, `/articles`, `/pages`, `/subscribers`, `/inquiries`, `/media`, and `/activity`; CRUD/publish operations for cars and articles; page updates; subscriber export/status/removal; inquiry status and editable reply drafts; explicit reply delivery at `POST /replies/:id/send`; and media upload/delete at `/api/admin/media`. Uploaded files are persisted in GridFS; public file URLs are served at `/media/uploads/:id`. Email delivery is unavailable until Resend is configured.
+```bash
+npm --prefix backend run seed
+```
 
-MongoDB models: `Car`, `Article`, `Page` (keeps separate draft and last-published content), `Subscriber` (status and consent), `Inquiry`, `EmailReply` (draft/provider result/status), `Activity`, and an ID `Counter` for cars. The legacy media-reference collection is read-only and is not an image-storage service.
+The seed command inserts initial inventory and articles when their collections are empty, adds missing page content, and registers project images. Initial cars and articles are drafts by default. Review the database target and sample content before seeding or publishing.
 
+```bash
+# Publish cars and articles when inserting the initial seed records
+npm --prefix backend run seed -- --publish
+```
 
-## Contact-form email notifications
+This flag does not publish existing drafts. Legal copy and sample editorial content still need appropriate review.
 
-Public submissions from both the Contact page and its popup are saved to MongoDB and then sent as owner notifications through Resend. Set `CONTACT_NOTIFICATION_EMAIL` on the backend to the email registered to your Resend account. The current local recipient is the owner-provided Gmail address. Keep `RESEND_API_KEY` and `RESEND_FROM_EMAIL` server-side. No Gmail OAuth connection is needed for this notification flow.
+## Configuration
 
-With `Mustang Garage <onboarding@resend.dev>` as the sender, notifications can be delivered to the Resend account owner without a custom domain. `Reply-To` is the visitor's validated email address, so the owner can reply using Gmail's Reply button. The public request cannot override the notification recipient. No existing Resend domains are modified.
+### Backend · `backend/.env`
 
-The admin inbox remains the source of record if email is unavailable or rejected. `Inquiry.notification` stores `Accepted`, `Failed`, `Unavailable`, or `Unconfirmed`, the provider ID when accepted, and the attempt timestamp. Provider acceptance is not proof of inbox delivery. A stable inquiry-specific Resend idempotency key is used. Notification trouble does not return a false failure for an inquiry already saved successfully.
+| Variable | Purpose |
+| --- | --- |
+| `NODE_ENV` | `development` locally; `production` when deployed. |
+| `PORT` | API port; defaults to `4000`. |
+| `CLIENT_URL` | Exact frontend origins, comma-separated if needed. Wildcards are rejected in production. |
+| `MONGODB_URI` | MongoDB connection string with the intended database and credentials. |
+| `CLERK_SECRET_KEY` | Backend key from your Clerk application. |
+| `ADMIN_EMAILS` | Comma-separated, verified administrator email addresses. |
+| `RESEND_API_KEY` | Server-side Resend API key. |
+| `RESEND_FROM_EMAIL` | Sender identity; the example uses `Mustang Garage <onboarding@resend.dev>`. |
+| `CONTACT_NOTIFICATION_EMAIL` | Owner notification address. With the test sender, use the email registered to Resend. |
+| `DNS_SERVERS` | Optional process-local DNS override for environments with Atlas SRV lookup problems. |
 
-Restart the backend after changing its environment. Sending direct replies from the admin panel to arbitrary visitor addresses through Resend still requires a verified sender domain; owner notifications do not lift that restriction.
+For MongoDB Atlas, create a database user with the required access to the selected database, URL-encode password characters in the URI, and allow the backend host through Atlas Network Access.
+
+### Frontend · `client/.env.local`
+
+| Variable | Local example |
+| --- | --- |
+| `VITE_API_URL` | `http://localhost:4000/api` |
+| `VITE_CLERK_PUBLISHABLE_KEY` | Publishable key from the same Clerk application as the backend. |
+
+Configure the exact frontend origin and sign-in redirects in Clerk. Regular users enter their personal garage; administrators are authorized by the backend allowlist.
+
+> Only public configuration belongs in `VITE_` variables. Keep database credentials, Clerk secret keys, and Resend keys on the backend. Restart the relevant application after changing local environment values.
+
+### How contact notifications work
+
+```text
+Visitor submits the contact form
+                │
+                ▼
+       Inquiry saved to MongoDB
+                │
+          ┌─────┴─────┐
+          ▼           ▼
+     Admin inbox   Resend notification
+                       │
+                       ▼
+              Configured owner email
+              Reply-To: visitor email
+```
+
+The visitor cannot override the notification recipient. The inquiry remains in Admin → Inbox if notification delivery fails. Notification status and provider results are recorded; provider acceptance does not guarantee inbox delivery.
+
+**No custom domain is required to notify the Resend account owner with the test sender.** Direct admin replies to other recipients require a verified sender domain. Admin reply drafts are saved before sending, and email is sent only after an explicit Send action. Images use MongoDB GridFS; there is no separate image-hosting service to configure.
+
+## Routes & workspace
+
+| Public route | Page |
+| --- | --- |
+| `/` | Home |
+| `/inventory` · `/inventory/:carId` | Collection and machine files |
+| `/about` | About the Garage |
+| `/journal` · `/journal/:slug` | Journal and individual stories |
+| `/contact` | Contact page and inquiry form |
+| `/saved` | Saved machines |
+| `/account` | Signed-in user dashboard; `/dashboard` redirects here |
+| `/sign-in` · `/sign-up` | Clerk account access |
+| `/privacy` · `/terms` | Policy and terms content |
+
+| Admin route | Desk |
+| --- | --- |
+| `/admin` | Overview and recent activity |
+| `/admin/cars` | Inventory management |
+| `/admin/pages` | Page content and publication |
+| `/admin/journal` | Article management |
+| `/admin/media` | Image library and uploads |
+| `/admin/mailing` | Subscribers and CSV export |
+| `/admin/inbox` | Inquiries, reply drafts, and sent-message history |
+| `/admin/users` | Account records |
+
+The API is mounted under `/api/public`, `/api/auth`, and `/api/admin`. Public inventory and journal endpoints expose listed/published content. Contact and newsletter endpoints validate input and apply rate limits; admin list endpoints support pagination.
+
+<details>
+<summary><strong>Data models</strong></summary>
+
+`Car` · `Article` · `Page` · `Subscriber` · `Inquiry` · `EmailReply` · `Media` · `User` · `Activity` · `Counter`
+
+Uploaded image files and chunks live in GridFS. Page records keep editable content separate from their last published snapshot. Inquiries retain their notification metadata and associated reply records.
+
+</details>
+
+## Project structure
+
+```text
+MustangeEra/
+├── client/
+│   ├── public/                  # Favicon and public assets
+│   ├── src/
+│   │   ├── admin/               # Protected editorial workspace
+│   │   ├── components/          # Home, About, inventory, and shared UI
+│   │   ├── features/            # Inventory, journal, and legal types/content
+│   │   ├── lib/                 # API client, authentication, shared state
+│   │   ├── pages/               # Account, journal, and legal pages
+│   │   └── styles/              # Scoped CSS and typography theme
+│   └── vercel.json              # SPA route rewrites
+├── backend/
+│   ├── public/media/            # Project image assets
+│   ├── src/
+│   │   ├── controllers/         # Public content and contact handling
+│   │   ├── email/               # Reply templates and contact notifications
+│   │   ├── middleware/          # Authentication and error handling
+│   │   ├── models/              # Mongoose schemas
+│   │   ├── routes/              # Express API routes
+│   │   └── seed.ts              # Initial content and asset registration
+│   └── test/                    # API integration tests
+├── MustangeCharger/             # README hero and screenshots
+├── render.yaml                 # Backend deployment blueprint
+└── README.md
+```
+
+## Quality checks
+
+Run from the repository root:
+
+```bash
+npm --prefix client run lint
+npm --prefix client run build
+npm --prefix backend run build
+npm --prefix backend test
+```
+
+The backend tests use a disposable MongoDB instance and fake email delivery. The first test run may download a MongoDB binary; `MONGOMS_SYSTEM_BINARY` can point to an installed `mongod` executable instead. Tests do not need to send real emails or modify your application database.
+
+## Deployment
+
+The repository includes a [Render Blueprint](render.yaml) for the API and [Vercel rewrites](client/vercel.json) for frontend routes.
+
+1. **Frontend:** set the project root to `client`, build with `npm run build`, and use `dist` as the output directory. Add the frontend environment variables.
+2. **Backend:** deploy the root `render.yaml` blueprint, which uses `backend` as its application directory. Supply MongoDB, Clerk, admin, CORS, and email settings through the hosting dashboard.
+3. **Connect them:** set frontend `VITE_API_URL` to the deployed backend origin followed by `/api`. Set backend `CLIENT_URL` to the exact frontend origin and allow that origin in Clerk.
+4. **Verify readiness:** check `/api/health`, sign in, confirm admin authorization, and review the public collection and contact flow.
+
+Configure Atlas network access for the backend host. Seed deliberately against the intended database; the deployment does not automatically seed or publish your content. Vite environment changes require a new frontend build.
+
+---
+
+<p align="center"><strong>MUSTANG GARAGE</strong><br><em>For the machines. For the stories. For the people.</em></p>
