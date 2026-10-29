@@ -1,4 +1,4 @@
-# Mustang Garage
+# 🏎️ Mustang Garage
 
 ![Mustang Garage — cinematic hero and classic editorial typography](MustangeCharger/Mustang%20Garage.png)
 
@@ -26,7 +26,9 @@
 
 ---
 
-## The project
+<a name="the-project"></a>
+
+## 🏁 The project
 
 Mustang Garage brings the feeling of a classic motoring magazine to a full-stack web application. Cinematic photography, expressive serif headlines, olive charcoal surfaces, warm ivory, and restrained copper accents carry the experience from the public collection to the admin desk.
 
@@ -36,11 +38,11 @@ The frontend is built with React and TypeScript. An Express API stores inventory
 
 | Experience | What it includes |
 | --- | --- |
-| **The collection** | Search by marque, model, or year; make and era filters; sorting; individual machine files. |
-| **The journal** | Cover stories, an editorial index, and article pages with readable long-form layouts. |
-| **My garage** | A protected account dashboard, profile management, saved machines, and recently viewed cars. |
-| **The conversation** | Contact-page and popup forms, optional car inquiries, and server-confirmed submission feedback. |
-| **The experience** | GSAP and ScrollTrigger motion, responsive navigation, keyboard focus states, and reduced-motion support. |
+| **🚗 The collection** | Search by marque, model, or year; make and era filters; sorting; individual machine files. |
+| **📖 The journal** | Cover stories, an editorial index, and article pages with readable long-form layouts. |
+| **🔑 My garage** | A protected account dashboard, profile management, saved machines, and recently viewed cars. |
+| **✉️ The conversation** | Contact-page and popup forms, optional car inquiries, and server-confirmed submission feedback. |
+| **✨ The experience** | GSAP and ScrollTrigger motion, responsive navigation, keyboard focus states, and reduced-motion support. |
 
 Wishlist selections currently last for the browsing session. Recently viewed cars use local browser storage when available.
 
@@ -53,7 +55,9 @@ The protected admin workspace includes inventory management, structured page edi
 - **Own the media.** Uploaded images are stored in MongoDB GridFS; published references prevent deletion.
 - **Authorize on the server.** A verified Clerk session and an email in `ADMIN_EMAILS` are required for admin APIs. Hiding a navbar link is not the access-control mechanism.
 
-## Screenshots
+<a name="screenshots"></a>
+
+## 📸 Screenshots
 
 All images below come from the checked-in [`MustangeCharger`](MustangeCharger/) folder. Select a preview to open the original screenshot.
 
@@ -128,7 +132,9 @@ All images below come from the checked-in [`MustangeCharger`](MustangeCharger/) 
 
 </details>
 
-## Built with
+<a name="built-with"></a>
+
+## 🧰 Built with
 
 | Layer | Technology |
 | --- | --- |
@@ -142,7 +148,9 @@ All images below come from the checked-in [`MustangeCharger`](MustangeCharger/) 
 | Validation & protection | Zod, Helmet, CORS, form rate limits |
 | API tests | Node test runner, Supertest, MongoDB Memory Server |
 
-## Run locally
+<a name="run-locally"></a>
+
+## 🚀 Run locally
 
 **You need:** Node.js 22 or newer, an accessible MongoDB database, and Clerk keys from the same Clerk application.
 
@@ -186,7 +194,9 @@ npm --prefix backend run seed -- --publish
 
 This flag does not publish existing drafts. Legal copy and sample editorial content still need appropriate review.
 
-## Configuration
+<a name="configuration"></a>
+
+## ⚙️ Configuration
 
 ### Backend · `backend/.env`
 
@@ -237,7 +247,9 @@ The visitor cannot override the notification recipient. The inquiry remains in A
 
 **No custom domain is required to notify the Resend account owner with the test sender.** Direct admin replies to other recipients require a verified sender domain. Admin reply drafts are saved before sending, and email is sent only after an explicit Send action. Images use MongoDB GridFS; there is no separate image-hosting service to configure.
 
-## Routes & workspace
+<a name="routes--workspace"></a>
+
+## 🗺️ Routes & workspace
 
 | Public route | Page |
 | --- | --- |
@@ -273,7 +285,9 @@ Uploaded image files and chunks live in GridFS. Page records keep editable conte
 
 </details>
 
-## Project structure
+<a name="project-structure"></a>
+
+## 🗂️ Project structure
 
 ```text
 MustangeEra/
@@ -302,7 +316,9 @@ MustangeEra/
 └── README.md
 ```
 
-## Quality checks
+<a name="quality-checks"></a>
+
+## ✅ Quality checks
 
 Run from the repository root:
 
@@ -315,7 +331,9 @@ npm --prefix backend test
 
 The backend tests use a disposable MongoDB instance and fake email delivery. The first test run may download a MongoDB binary; `MONGOMS_SYSTEM_BINARY` can point to an installed `mongod` executable instead. Tests do not need to send real emails or modify your application database.
 
-## Deployment
+<a name="deployment"></a>
+
+## ☁️ Deployment
 
 The repository includes a [Render Blueprint](render.yaml) for the API and [Vercel rewrites](client/vercel.json) for frontend routes.
 
