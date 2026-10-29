@@ -1,0 +1,59 @@
+/* Three complementary type roles, shared by public pages, account screens, and admin. */
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Manrope', Arial, sans-serif;
+  --font-meta: 'IBM Plex Mono', 'Courier New', monospace;
+}
+body {
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+:where(h1, h2, h3, h4) {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+:where(button, input, select, textarea) { font-family: var(--font-body); }
+:where(code, kbd, samp, time, dt, figcaption) { font-family: var(--font-meta); }
+:where(dt, figcaption) { line-height: 1.65; }
+:where([class*='__eyebrow'], [class*='__kicker'], [class*='__folio'], [class*='__serial']) {
+  font-family: var(--font-meta);
+  font-weight: 500;
+}
+/* Classic book typography: measured proportions and lighter, expressive italics. */
+.mg-hero h1 {
+  font-size: clamp(58px, 7.7vw, 112px);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+}
+.mg-hero h1 em { font-weight: 500; }
+.mg-navbar__wordmark { font-size: 24px; line-height: 1.02; letter-spacing: -.02em; }
+.mg-navbar__wordmark > span { font-size: 12px; letter-spacing: .2em; }
+.mg-navbar__mark-letter { font-weight: 600; }
+.mg-footer__wordmark { font-size: clamp(36px, 11.1vw, 184px); line-height: 1.1; letter-spacing: -.025em; }
+.mg-car-detail__title-block h1 { font-size: clamp(42px, 5.9vw, 102px); line-height: 1.05; }
+.mg-inventory-hero h1 { font-size: clamp(44px, 6.6vw, 106px); line-height: 1.05; }
+.mg-contact-page__heading h1 { font-size: clamp(48px, 6.8vw, 108px); line-height: 1.05; }
+.mg-admin-brand strong { font-size: 27px; line-height: 1.08; }
+.mg-admin :is(h1, h2, h3), .mg-admin-dialog :is(h2, h3) { line-height: 1.12; }
+@media (max-width: 600px) {
+  .mg-hero h1 { font-size: clamp(47px, 11.5vw, 68px); line-height: 1.05; }
+  .mg-navbar__wordmark { font-size: 20px; }
+  .mg-navbar__wordmark > span { font-size: 10px; }
+  .mg-footer__wordmark { font-size: clamp(29px, 10vw, 60px); }
+}
+
+/* Keep emphasis graceful while the supporting text stays practical and readable. */
+:where(h1, h2, h3) em { font-weight: 500; }
+:where(p, li) { font-kerning: normal; }
+:where(time, dt, code, [class*="__serial"], [class*="__folio"]) {
+  font-variant-numeric: tabular-nums;
+}
+.mg-hero h1 { font-weight: 600; text-shadow: 0 3px 20px rgb(0 0 0 / 28%); }
+.mg-hero h1 em { text-shadow: none; }
+.mg-navbar__wordmark { font-weight: 600; }
+.mg-footer__wordmark { font-weight: 600; }

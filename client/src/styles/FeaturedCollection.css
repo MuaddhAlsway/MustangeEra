@@ -1,0 +1,252 @@
+.mg-collection {
+  --collection-red: #e05238;
+  --collection-text: #eee8db;
+  --collection-muted: #aaa797;
+  --collection-line: #3b3c31;
+  --collection-display: var(--font-display);
+  padding: 58px clamp(20px, 5.5vw, 96px) 48px;
+  color: var(--collection-text);
+  background: #11130f;
+  font: 400 14px/1.7 var(--font-body);
+  overflow-wrap: anywhere;
+  scroll-margin-top: calc(var(--navbar-height, 83px) + 16px);
+}
+.mg-collection,
+.mg-collection *,
+.mg-collection *::before,
+.mg-collection *::after { box-sizing: border-box; }
+.mg-collection :is(h2,h3,p,dl,dd) { margin: 0; }
+.mg-collection button,
+.mg-collection input,
+.mg-collection select { font: inherit; border-radius: 0; }
+.mg-collection button { cursor: pointer; }
+.mg-collection :is(button,a,input,select):focus-visible { outline: 3px solid #ffc77d; outline-offset: 5px; }
+.mg-collection svg { flex-shrink: 0; }
+.mg-collection__topline,
+.mg-collection__status,
+.mg-collection__footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 9px; font-weight: 700; letter-spacing: 1.4px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection__topline { padding-bottom: 16px; border-bottom: 1px solid #626454; }
+.mg-collection__topline > span:first-child { display: flex; align-items: center; gap: 10px; }
+.mg-collection__topline i { width: 7px; height: 7px; background: var(--collection-red); }
+.mg-collection__topline > span:last-child { color: var(--collection-muted); }
+.mg-collection__heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, .33fr); align-items: end; gap: 36px; padding-block: 42px; }
+.mg-collection__eyebrow { color: #bbb7a8; font-size: 9px; font-weight: 700; letter-spacing: 2px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection__heading h2 { max-width: 19ch; margin-top: 20px; color: #f0e7d4; font: 600 clamp(42px, 5.6vw, 82px)/1.08 var(--collection-display); letter-spacing: -.025em; overflow-wrap: normal; word-break: normal; text-wrap: balance; }
+.mg-collection__heading h2 > span { display: block; }
+.mg-collection__intro { max-width: 34ch; padding-bottom: 6px; color: #b9b9a4; font: 400 13px/1.95 var(--font-body); }
+.mg-collection__heading h2 em { display: block; margin-top: 3px; color: #d4a47b; font-weight: 500; font-style: italic; }
+.mg-collection__manifest { padding: 8px 0 0 26px; border-left: 1px solid #585a49; }
+.mg-collection__manifest-label { display: block; color: var(--collection-muted); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection__manifest > strong { display: block; margin: 10px 0; font: 600 clamp(66px, 7vw, 104px)/1 var(--collection-display); }
+.mg-collection__manifest > span:nth-of-type(2) { font-size: 9px; font-weight: 800; letter-spacing: 1px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection__manifest > p { max-width: 30ch; margin-top: 12px; color: var(--collection-muted); font-size: 12px; }
+.mg-collection__manifest-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; color: #ee9476; font-size: 8px; letter-spacing: 1px; font-family: var(--font-meta); font-weight: 500; }
+
+.mg-collection__toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 1.65fr);
+  border: 1px solid #555846;
+  border-top: 2px solid #bb6845;
+  background: #1b1e17;
+}
+
+.mg-collection__search,
+.mg-collection__filter-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 16px 20px;
+  gap: 8px;
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.mg-collection .mg-collection__field-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #b6b89f;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  line-height: 1.5; font-family: var(--font-meta); font-weight: 500; }
+
+.mg-collection__search-control { display: flex; align-items: center; min-width: 0; gap: 12px; color: #df9b70; }
+.mg-collection .mg-collection__search input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 8px 2px;
+  border: 0;
+  color: #f1ebd9;
+  background: transparent;
+  font: 500 13px/1.5 var(--font-body);
+  color-scheme: dark;
+}
+.mg-collection__search input::placeholder { color: #9fa68e; opacity: 1; }
+.mg-collection__filters { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr) minmax(0, 1.4fr); min-width: 0; }
+.mg-collection__filter-field { border-left: 1px solid #454a37; }
+.mg-collection__filter-field::after { position: absolute; right: 22px; bottom: 32px; width: 7px; height: 7px; border-right: 1.5px solid #dfa875; border-bottom: 1.5px solid #dfa875; transform: rotate(45deg); pointer-events: none; content: ''; }
+.mg-collection .mg-collection__filters select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 8px 22px 8px 0;
+  appearance: none;
+  border: 0;
+  color: #eee8d5;
+  background: transparent;
+  font: 600 12px/1.5 var(--font-body);
+  color-scheme: dark;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+.mg-collection__filters option { color: #eee8d5; background: #20251a; }
+.mg-collection__search:focus-within,
+.mg-collection__filter-field:focus-within { background: #252b1e; box-shadow: inset 0 -2px #edaa6d; }
+.mg-collection__toolbar :is(input,select):focus-visible { outline: 2px solid #efb679; outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) {
+  .mg-collection__filter-field:hover { background: #23291c; }
+  .mg-collection__filter-field:hover .mg-collection__field-label { color: #e9ae78; }
+}
+@media (max-width: 1000px) {
+  .mg-collection__toolbar { grid-template-columns: minmax(0, 1fr); }
+  .mg-collection__search { border-bottom: 1px solid #454a37; }
+  .mg-collection__filter-field:first-child { border-left: 0; }
+}
+@media (max-width: 560px) {
+  .mg-collection__filters { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .mg-collection__filter-field { padding: 14px 16px; }
+  .mg-collection__filter-field:last-child { grid-column: 1 / -1; border-left: 0; border-top: 1px solid #454a37; }
+  .mg-collection__filter-field::after { right: 18px; bottom: 30px; }
+}.mg-collection__status { min-height: 58px; color: #aaa998; font-size: 8px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection__status button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; border: 0; color: #ffac77; background: transparent; font-size: 9px; letter-spacing: 1px; }
+
+.mg-collection__grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px 24px; }
+.mg-collection .mg-car-card { display: flex; grid-column: span 2; flex-direction: column; min-width: 0; border: 1px solid #3c4031; background: #1a1d16; }
+.mg-collection .mg-car-card:nth-child(2),
+.mg-collection .mg-car-card:nth-child(3) { grid-column: span 3; }
+.mg-collection .mg-car-card__photo { position: relative; display: block; width: 100%; aspect-ratio: 1.45; padding: 0; overflow: hidden; border: 0; color: #fff; background: #25291e; text-align: left; }
+.mg-collection .mg-car-card__photo::after { position: absolute; inset: 0; background: linear-gradient(180deg, #0005, transparent 35%, transparent 55%, #000b); content: ''; pointer-events: none; }
+.mg-collection .mg-car-card__photo img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.72) contrast(1.04); transition: transform 650ms cubic-bezier(.2,.7,.3,1), filter 350ms ease; }
+.mg-collection .mg-car-card__image-top { position: absolute; z-index: 1; inset: 16px 16px auto; display: flex; align-items: start; justify-content: space-between; gap: 12px; font-size: 8px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection .mg-car-card__image-top > span { padding: 6px 8px; background: #10140dcc; }
+.mg-collection .mg-car-card__image-top > span:last-child { color: #fff1df; background: #9b3627; }
+.mg-collection .mg-car-card__image-year { position: absolute; z-index: 1; bottom: 14px; left: 18px; color: #f7efdf; font: italic 600 clamp(40px, 5vw, 72px)/1 var(--collection-display); letter-spacing: -.025em; }
+.mg-collection .mg-car-card__view { position: absolute; z-index: 1; right: 16px; bottom: 20px; display: flex; align-items: center; gap: 10px; max-width: 52%; font-size: 8px; font-weight: 700; letter-spacing: 1px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection .mg-car-card__body { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 22px; }
+.mg-collection .mg-car-card__title-row { display: grid; grid-template-columns: minmax(0, 1fr) 42px; align-items: start; gap: 16px; margin-bottom: 12px; }
+.mg-collection .mg-car-card__title-row > div { min-width: 0; }
+.mg-collection .mg-car-card__year { color: #c1bfad; font-size: 9px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection .mg-car-card__year i { margin-inline: 6px; color: #e27c59; font-style: normal; }
+.mg-collection .mg-car-card__save { display: grid; flex-shrink: 0; width: 42px; height: 42px; place-items: center; border: 1px solid #595c48; color: #dbd8c7; background: transparent; }
+.mg-collection .mg-car-card__save[aria-pressed='true'] { color: #ff985c; border-color: #ff985c; background: #342419; }
+.mg-collection .mg-car-card h3 { margin-top: 10px; color: #eee4cf; font: 600 clamp(28px, 2.6vw, 36px)/1.16 var(--collection-display); text-transform: none; letter-spacing: -.015em; overflow-wrap: break-word; word-break: normal; text-wrap: balance; }
+.mg-collection .mg-car-card h3 a { display: block; color: inherit; font: inherit; letter-spacing: inherit; text-decoration: none; transition: color 180ms ease; }
+.mg-collection .mg-car-card h3 a:hover { color: #efbb8a; }
+.mg-collection .mg-car-card h3 a:focus-visible { color: #efbb8a; outline: 2px solid #e9b780; outline-offset: 4px; }
+.mg-collection .mg-car-card h3 button { padding: 0; border: 0; color: inherit; background: transparent; font: inherit; letter-spacing: inherit; text-align: left; text-transform: inherit; }
+.mg-collection .mg-car-card__trim { margin-top: 12px; color: #aaa998; font-size: 11px; line-height: 1.8; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection .mg-car-card__description { max-width: 50ch; margin-top: 20px; color: #b6b5a3; font-size: 13px; line-height: 1.85; }
+.mg-collection .mg-car-card__specs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 24px; padding-block: 18px; border-block: 1px solid #3b4030; }
+.mg-collection .mg-car-card__specs dt { margin-bottom: 6px; color: #949983; font-size: 7px; font-weight: 700; letter-spacing: 1px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection .mg-car-card__specs dd { color: #ddd9c7; font-size: 10px; font-weight: 600; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection .mg-car-card__location { margin: 12px 0 22px; color: #929983; font-size: 8px; letter-spacing: 1px; text-transform: uppercase; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection .mg-car-card__bottom { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-top: auto; padding-top: 18px; border-top: 1px solid #3b4030; }
+.mg-collection .mg-car-card__bottom > div > span { display: block; margin-bottom: 6px; color: #9b9d88; font-size: 7px; font-weight: 700; letter-spacing: 1px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection .mg-car-card__bottom strong { display: block; color: #f4e9d5; font: 600 clamp(26px, 2.6vw, 40px)/1 var(--collection-display); }
+.mg-collection .mg-car-card__bottom > button { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; gap: 16px; border: 1px solid #686c52; color: #f1e5cd; background: transparent; }
+.mg-collection .mg-car-card__bottom > button span { display: none; }
+
+.mg-collection .mg-car-card--lead { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); border-top: 3px solid var(--collection-red); }
+.mg-collection .mg-car-card--lead .mg-car-card__photo { height: 100%; min-height: 480px; aspect-ratio: auto; }
+.mg-collection .mg-car-card--lead .mg-car-card__body { padding: clamp(24px, 3vw, 48px); }
+.mg-collection .mg-car-card--lead h3 { font-size: clamp(34px, 3.6vw, 56px); line-height: 1.12; }
+.mg-collection .mg-car-card--lead .mg-car-card__image-year { bottom: 16px; font-size: clamp(70px, 10vw, 144px); }
+.mg-collection .mg-car-card--lead .mg-car-card__bottom > button { width: auto; min-height: 44px; padding: 10px 14px; border-color: #b64a32; background: #ab3a27; }
+.mg-collection .mg-car-card--lead .mg-car-card__bottom > button span { display: inline; font-size: 8px; font-weight: 800; letter-spacing: 1px; }
+.mg-collection__empty { grid-column: 1 / -1; padding: 60px 24px; border: 1px solid #434934; background: #1b1e17; text-align: center; }
+.mg-collection__empty > span { color: #ec9d71; font-size: 9px; letter-spacing: 1.4px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection__empty h3 { margin-top: 20px; font: 600 clamp(32px, 5vw, 64px)/1 var(--collection-display); text-transform: uppercase; }
+.mg-collection__empty p { max-width: 55ch; margin: 18px auto 0; color: #b4b5a2; font-size: 13px; }
+.mg-collection__empty button { display: inline-flex; align-items: center; gap: 20px; min-height: 46px; margin-top: 28px; padding: 10px 18px; border: 1px solid #986044; color: #ffd1a2; background: #302218; font-size: 10px; font-weight: 700; }
+.mg-collection__footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid #545745; color: #999d88; font-size: 8px; font-family: var(--font-meta); font-weight: 500; }
+.mg-collection__footer a { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; color: #eee2ca; text-decoration: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .mg-collection .mg-car-card:has(button:hover),
+  .mg-collection .mg-car-card:focus-within { border-color: #b86a45; }
+  .mg-collection .mg-car-card__photo:hover img { filter: saturate(1); transform: scale(1.04); }
+  .mg-collection .mg-car-card h3 button:hover,
+  .mg-collection__footer a:hover { color: #ff9a52; }
+  .mg-collection .mg-car-card__save:hover { color: #ff9a52; border-color: #ff9a52; }
+  .mg-collection .mg-car-card__bottom > button:hover { color: #11130f; background: #f09b61; border-color: #f09b61; }
+  .mg-collection__saved-filter:hover { color: #ffa564; }
+  .mg-collection__eras button:not([aria-pressed='true']):hover { color: #ffaf70; background: #272b20; }
+}
+
+@media (min-width: 1800px) {
+  .mg-collection { padding-inline: max(96px, calc((100vw - 1600px) / 2)); }
+}
+@media (max-width: 1100px) {
+  .mg-collection__heading { grid-template-columns: minmax(0, 1fr) 220px; gap: 28px; }
+  .mg-collection .mg-car-card--lead { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+  .mg-collection .mg-car-card { grid-column: span 3; }
+  .mg-collection .mg-car-card--lead { grid-column: 1 / -1; }
+  .mg-collection .mg-car-card--lead .mg-car-card__bottom > button span { display: none; }
+}
+@media (max-width: 760px) {
+  .mg-collection { padding: 38px 20px; }
+  .mg-collection__topline { flex-wrap: wrap; gap: 8px; font-size: 8px; font-family: var(--font-meta); font-weight: 500; }
+  .mg-collection__heading { grid-template-columns: minmax(0, 1fr); padding-block: 32px; }
+  .mg-collection__heading h2 { font-size: clamp(40px, 8.5vw, 64px); }
+  .mg-collection__manifest { display: none; }
+  .mg-collection__toolbar { grid-template-columns: minmax(0, 1fr); }
+  .mg-collection__search { grid-column: 1 / -1; border-bottom: 1px solid #414435; padding: 14px; }
+  .mg-collection__select { padding: 12px 14px; }
+  .mg-collection__select:nth-child(2) { border-left: 0; }
+  .mg-collection__filter-row { flex-wrap: wrap; }
+  .mg-collection__eras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+  .mg-collection__eras button { padding: 12px; font-size: 9px; }
+  .mg-collection__eras button:last-child { border-right: 0; }
+  .mg-collection__eras button span { font-size: 6px; letter-spacing: .6px; }
+  .mg-collection__saved-filter { justify-content: flex-start; width: 100%; min-height: 44px; padding-inline: 14px; border-top: 1px solid #414435; }
+  .mg-collection__status { gap: 12px; font-size: 7px; letter-spacing: .7px; font-family: var(--font-meta); font-weight: 500; }
+  .mg-collection__status > span { display: none; }
+  .mg-collection__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .mg-collection .mg-car-card,
+  .mg-collection .mg-car-card:nth-child(2),
+  .mg-collection .mg-car-card:nth-child(3) { grid-column: span 1; }
+  .mg-collection .mg-car-card--lead { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr); }
+  .mg-collection .mg-car-card--lead .mg-car-card__photo { min-height: 0; aspect-ratio: 1.5; }
+  .mg-collection .mg-car-card--lead .mg-car-card__body { padding: 24px; }
+  .mg-collection .mg-car-card--lead h3 { font-size: clamp(32px, 6vw, 46px); }
+  .mg-collection .mg-car-card__image-top { inset: 10px 10px auto; font-size: 7px; gap: 6px; font-family: var(--font-meta); font-weight: 500; }
+  .mg-collection .mg-car-card__body { padding: 18px; }
+  .mg-collection .mg-car-card__view { font-size: 7px; font-family: var(--font-meta); font-weight: 500; }
+  .mg-collection .mg-car-card__specs { gap: 8px; }
+  .mg-collection__footer { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+@media (max-width: 560px) {
+  .mg-collection__grid { grid-template-columns: minmax(0, 1fr); }
+  .mg-collection .mg-car-card__photo { aspect-ratio: 1.4; }
+  .mg-collection .mg-car-card__body { padding: 22px; }
+  .mg-collection .mg-car-card h3 { font-size: clamp(28px, 7.5vw, 36px); }
+  .mg-collection .mg-car-card__specs dd { font-size: 11px; font-family: var(--font-meta); font-weight: 500; }
+  .mg-collection .mg-car-card--lead .mg-car-card__bottom > button span { display: inline; }
+}
+@media (max-width: 400px) {
+  .mg-collection .mg-car-card--lead .mg-car-card__bottom > button span { display: none; }
+  .mg-collection .mg-car-card__image-top { font-size: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mg-collection *,
+  .mg-collection *::before,
+  .mg-collection *::after { transition: none !important; animation: none !important; }
+  .mg-collection .mg-car-card__photo img { transform: none !important; }
+}
+
+

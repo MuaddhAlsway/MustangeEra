@@ -1,0 +1,358 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "year": 1969,
+      "make": "Ford",
+      "model": "Mustang Boss 429",
+      "trim": "429 V8 Â· 4-speed manual",
+      "price": 289000,
+      "miles": "28,400",
+      "power": "375 hp",
+      "type": "Rare classic",
+      "color": "Wimbledon White",
+      "tag": "Rare find",
+      "location": "Austin, TX",
+      "description": "A landmark homologation-era Mustang with a story as memorable as its unmistakable shape.",
+      "image": "/media/Collection010.png"
+    },
+    {
+      "id": 2,
+      "year": 1967,
+      "make": "Ford",
+      "model": "Mustang Shelby GT500",
+      "trim": "428 Police Interceptor Â· 4-speed",
+      "price": 219000,
+      "miles": "36,100",
+      "power": "355 hp",
+      "type": "Shelby classic",
+      "color": "Nightmist Blue",
+      "tag": "Collector pick",
+      "location": "Nashville, TN",
+      "description": "A Shelby-era icon selected for its specification, presence, and documented provenance.",
+      "image": "/media/Collection090.png"
+    },
+    {
+      "id": 3,
+      "year": 2022,
+      "make": "Ford",
+      "model": "Mustang Shelby GT500",
+      "trim": "5.2L Supercharged V8 Â· DCT",
+      "price": 97900,
+      "miles": "8,240",
+      "power": "760 hp",
+      "type": "Modern",
+      "color": "Carbonized Gray",
+      "tag": "Low miles",
+      "location": "Scottsdale, AZ",
+      "description": "A track-bred supercharged Mustang with modern performance and exceptionally low mileage.",
+      "image": "/media/Collection030.png"
+    },
+    {
+      "id": 4,
+      "year": 1970,
+      "make": "Plymouth",
+      "model": "Hemi Cuda",
+      "trim": "426 Hemi Â· 4-speed manual",
+      "price": 1180000,
+      "miles": "19,700",
+      "power": "425 hp",
+      "type": "Limited production",
+      "color": "Lemon Twist",
+      "tag": "Museum-grade",
+      "location": "Charlotte, NC",
+      "description": "A defining American performance car. Verify production and provenance claims with records for each car.",
+      "image": "/media/Collection040.png"
+    },
+    {
+      "id": 5,
+      "year": 2021,
+      "make": "Chevrolet",
+      "model": "Camaro ZL1",
+      "trim": "6.2L Supercharged V8 Â· 10-speed",
+      "price": 68900,
+      "miles": "14,320",
+      "power": "650 hp",
+      "type": "Modern",
+      "color": "Riverside Blue",
+      "tag": "Driver favorite",
+      "location": "Miami, FL",
+      "description": "Supercar pace with an American soundtrack and modern performance engineering.",
+      "image": "/media/Collection080.png"
+    },
+    {
+      "id": 6,
+      "year": 1993,
+      "make": "Jaguar",
+      "model": "XJ220",
+      "trim": "3.5L Twin-Turbo V6 Â· 5-speed",
+      "price": 625000,
+      "miles": "7,860",
+      "power": "542 hp",
+      "type": "Rare supercar",
+      "color": "Le Mans Blue",
+      "tag": "Rare find",
+      "location": "Denver, CO",
+      "description": "A landmark early-1990s supercar representing the garageâ€™s wider rare-car collection.",
+      "image": "/media/Collection060.png"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "the-boss-beyond-the-badge",
+      "number": "01",
+      "category": "MUSTANG / ORIGINS",
+      "title": "The Boss, beyond the badge",
+      "excerpt": "A name can start the conversation. The shape, the details, and the individual machine make it worth continuing.",
+      "imageAlt": "White Mustang Boss 429 from the garage inventory",
+      "body": [
+        {
+          "heading": "Start with the silhouette",
+          "paragraphs": [
+            "Before the specification sheet, there is the first look. A long hood, a purposeful stance, a line that makes you stop walking. In this sample editorial, the Boss is a starting point for thinking about the pull of a car rather than a claim about a particular vehicleâ€™s history.",
+            "Spend a moment with the image before reading the badge. Notice which proportions hold your attention and which details you want to inspect more closely. That instinct is the beginning of a conversation, not the end of an assessment."
+          ]
+        },
+        {
+          "heading": "The badge is an invitation",
+          "paragraphs": [
+            "A familiar model name carries expectations. It can also tempt us to fill in gaps with a story we already know. An individual car deserves more careful attention: its identification, its stated configuration, and the records available for review.",
+            "Treat the label as a reason to ask better questions. Which details are documented? Which are descriptions from the seller? What remains to be established? The answers matter more than the confidence of the headline."
+          ]
+        },
+        {
+          "heading": "Leave room for the machine",
+          "paragraphs": [
+            "There is room for both enthusiasm and patience. Enjoy the design, read the inventory entry, and ask for the evidence behind the particulars that matter to you. A good story becomes more interesting when its boundaries are clear.",
+            "The photograph here comes from the garage inventory. It is an illustration for this essay, not evidence of originality, condition, production rarity, or competition history."
+          ]
+        }
+      ],
+      "readTime": "2 MIN READ",
+      "image": "/media/Collection010.png"
+    },
+    {
+      "slug": "big-block-bigger-story",
+      "number": "02",
+      "category": "UNDER THE HOOD",
+      "title": "Big block, bigger story",
+      "excerpt": "Beyond the shorthand: reading an engine description without letting the headline do all the talking.",
+      "imageAlt": "Plymouth Hemi Cuda from the garage inventory",
+      "body": [
+        {
+          "heading": "A phrase is not a specification",
+          "paragraphs": [
+            "Some phrases are almost a soundtrack. Big block. Manual gearbox. Open road. They suggest a feeling before they explain a machine. This sample feature looks at the language of an inventory listing without assigning unverified performance or mechanical qualities to a car.",
+            "A headline can be evocative and still leave important questions unanswered. The useful next step is to move from the broad phrase to the exact configuration stated for the individual vehicle."
+          ]
+        },
+        {
+          "heading": "Read the complete line",
+          "paragraphs": [
+            "Look at the engine description alongside the transmission, the model year, and any records offered. Keep the listingâ€™s wording separate from your assumptions. If a figure or component matters to your decision, ask how it was identified or measured.",
+            "An attractive photograph does not settle those questions. Neither does a familiar badge. Written details, supporting records, and an appropriate inspection are separate parts of understanding what is actually being offered."
+          ]
+        },
+        {
+          "heading": "Keep the feeling, ask the question",
+          "paragraphs": [
+            "The appeal of a machine need not disappear under scrutiny. Curiosity can deepen it. Ask the garage to explain the configuration in plain language and identify any information that is still unavailable.",
+            "This is an illustrative essay, not an engine guide. No output figures, component originality, or driving characteristics are established by this article or its accompanying inventory image."
+          ]
+        }
+      ],
+      "readTime": "2 MIN READ",
+      "image": "/media/Collection040.png"
+    },
+    {
+      "slug": "reading-a-cars-provenance",
+      "number": "03",
+      "category": "COLLECTOR NOTES",
+      "title": "How to read a carâ€™s provenance",
+      "excerpt": "A collectorâ€™s conversation begins with the records, the gaps, and the questions worth asking.",
+      "imageAlt": "Modern Mustang Shelby GT500 from the garage inventory",
+      "body": [
+        {
+          "heading": "Separate the story from the record",
+          "paragraphs": [
+            "A compelling description can make a car feel familiar before you have seen it. Provenance asks for a different kind of attention: what is known about this individual machine, what supports that account, and what has not yet been established.",
+            "This sample editorial is a conversation framework, not an authentication service. It does not verify the background of any vehicle shown in the garage."
+          ]
+        },
+        {
+          "heading": "Build a timeline, leave the gaps visible",
+          "paragraphs": [
+            "Ask which ownership, service, or restoration records can be reviewed. Read dates and descriptions in context. Where a period is undocumented, keep that gap visible rather than filling it with an appealing explanation.",
+            "Photographs and paperwork can raise useful questions as well as answer them. Ask how an item relates to the car being offered, and distinguish a general model reference from a vehicle-specific record."
+          ]
+        },
+        {
+          "heading": "Make uncertainty part of the conversation",
+          "paragraphs": [
+            "Clear questions help everyone. What is supplied with the vehicle? Which claims are supported by records? What would require specialist assessment? A straightforward account of the unknowns is more useful than a polished account that hides them.",
+            "The accompanying image is drawn from inventory for illustration. It does not imply a documented ownership chain, verified mileage, originality, or an inspection result."
+          ]
+        }
+      ],
+      "readTime": "2 MIN READ",
+      "image": "/media/Collection030.png"
+    },
+    {
+      "slug": "the-case-for-taking-the-long-way",
+      "number": "04",
+      "category": "ROAD CULTURE",
+      "title": "The case for taking the long way",
+      "excerpt": "An imagined Sunday drive, a quiet stretch of road, and a reminder to make room for the journey.",
+      "imageAlt": "Classic Mustang Shelby GT500 from the garage inventory",
+      "body": [
+        {
+          "heading": "An unhurried beginning",
+          "paragraphs": [
+            "Imagine a morning with no destination to announce. The route is ordinary, the coffee is still warm, and the best part of the plan is the space left in it. This is a fictional scene about the enjoyment of a journey, not an account of a customerâ€™s drive.",
+            "The car in the photograph supplies the visual mood. The road, the weather, and the driver in this essay are imagined; no ownership experience or mechanical behavior is being attributed to that vehicle."
+          ]
+        },
+        {
+          "heading": "Notice the overlooked",
+          "paragraphs": [
+            "A slower itinerary leaves room for small discoveries: a familiar street from another direction, a place to stop, a conversation that lasts longer than expected. The appeal is not a stopwatch or an impressive distance.",
+            "There is pleasure in paying attention. The shape of a dashboard, the way light crosses a parked car, the pause before heading home. A motoring story can live in those details without becoming a performance claim."
+          ]
+        },
+        {
+          "heading": "Bring a story back",
+          "paragraphs": [
+            "The imagined drive ends where it began, but with something to remember. That is the invitation behind this journal: make space for the people and places around the machines, not only the machines themselves.",
+            "When you are ready to explore an actual car, return to its individual inventory file. Read the supplied details and ask the garage about condition, records, and suitability rather than treating an editorial scene as a vehicle assessment."
+          ]
+        }
+      ],
+      "readTime": "2 MIN READ",
+      "image": "/media/Collection090.png"
+    }
+  ],
+  "pages": [
+    {
+      "key": "home",
+      "title": "Home",
+      "intro": "A considered collection of distinctive machines, brought together for the stories they carry.",
+      "hero": {"eyebrow":"THE AMERICAN ORIGINAL · EST. 1964","title":"BORN TO","accent":"RUN.","description":"The long hood. The fastback line. An icon that never learned to sit still.","image":"/media/Hero01.png","imageAlt":"Mustang Garage home hero","slides":[{"image":"/media/Hero01.png","imageAlt":"Mustang Boss 429 feature","issue":"01","label":"COVER STORY","kicker":"THE AMERICAN ORIGINAL · EST. 1964","title":"BORN TO","accent":"RUN.","description":"The long hood. The fastback line. An icon that never learned to sit still.","year":"1969","model":"MUSTANG BOSS 429"},{"image":"/media/Hero030.png","imageAlt":"Dodge Challenger R/T feature","issue":"02","label":"RARE FORM","kicker":"DETROIT IRON · LIMITED LEGEND","title":"BUILT TO","accent":"BE LOUD.","description":"Big displacement, unmistakable presence, and a story worth passing down.","year":"1970","model":"DODGE CHALLENGER R/T"},{"image":"/media/Hero03.png","imageAlt":"Mustang Shelby GT500 feature","issue":"03","label":"MODERN CLASSIC","kicker":"NEXT-GEN MUSCLE · PURE ATTITUDE","title":"THE ROAD","accent":"IS YOURS.","description":"A new chapter in American performance. Same pulse, sharper edge.","year":"2022","model":"MUSTANG SHELBY GT500"}]},
+      "sections": [
+        {"id":"the-garage-spotlight","heading":"The Garage Spotlight","body":"A closer look at the machine, its character, and the details that make it memorable.","image":"/media/Collection010.png","imageAlt":"Featured Mustang from the garage"},
+        {"id":"our-point-of-view","heading":"Our point of view","body":"Distinctive machines deserve a thoughtful look. We value character, clear details, and stories that stay with you.","image":"/media/Collection090.png","imageAlt":"Mustang Garage collection"},
+        {"id":"the-collection","heading":"The collection","body":"Explore the vehicles selected for the Mustang Garage. Listing details and availability should be reviewed and confirmed before publication."},
+        {"id":"the-journal","heading":"The journal","body":"Stories from around the machines, the people who care for them, and the roads that connect them."}
+      ]
+    },
+    {
+      "key": "about",
+      "title": "About the Garage",
+      "intro": "Mustang Garage brings together distinctive vehicles and the stories that make each one worth a closer look.",
+      "hero": {"eyebrow":"THE ORIGIN STORY","title":"BUILT ON A LOVE OF","accent":"the drive.","description":"Every garage begins with a reason.","image":"/media/FrontClassic.png","imageAlt":"Classic Mustang from the Mustang Garage collection"},
+      "sections": [
+        {"id":"origin-story","heading":"The Origin Story","body":"Mustang Garage brings together distinctive vehicles and the stories that make each one worth a closer look.","image":"/media/FrontClassic.png","imageAlt":"Classic Mustang from the Mustang Garage collection"},
+        {"id":"our-point-of-view","heading":"Our point of view","body":"A machine is more than a specification. Its design, details, history, and the people around it all deserve a considered look."},
+        {"id":"our-standard","heading":"Our standard","body":"Vehicle information should be checked against available records. Ask the garage about any details that matter to you."}
+      ]
+    },
+    {
+      "key": "contact",
+      "title": "Contact the Garage",
+      "intro": "Have a question about a vehicle, a visit, or a story? Send a note to the garage.",
+      "hero": {"eyebrow":"THE GARAGE / CONTACT","title":"LET’S TALK","accent":"about what moves you.","description":"No perfect opening line needed. Just a little curiosity.","image":"/media/Collection090.png","imageAlt":"Classic Mustang from the garage collection"},
+      "sections": [
+        {"id":"start-a-conversation","heading":"Start a conversation","body":"Use the inquiry form to tell the garage what you have in mind. Please do not include sensitive personal or payment information."},
+        {"id":"vehicle-details","heading":"Vehicle details","body":"For questions about a specific vehicle, include its name in your message so the garage can better understand your inquiry."}
+      ]
+    },
+    {
+      "key":"inventory","title":"The Collection / Inventory","intro":"Rare machines, considered carefully. Search the collection by marque, model, or year, then open a car to explore its details.",
+      "hero":{"eyebrow":"THE COLLECTION / INVENTORY","title":"FIND YOUR","accent":"FOREVER CAR.","description":"Rare machines, considered carefully. Search the collection by marque, model, or year, then open a car to explore its details.","image":"/media/Mustange01.png","imageAlt":"Mustang Garage inventory hero"},
+      "sections":[{"id":"collection","heading":"The Collection","body":"Browse the machines currently listed in the garage."}]
+    },
+    {
+      "key":"journal","title":"Mustang Garage / Editorial","intro":"For the stories that start where the specification sheet ends.",
+      "hero":{"eyebrow":"MUSTANG GARAGE / EDITORIAL","title":"THE GARAGE","accent":"JOURNAL.","description":"For the stories that start where the specification sheet ends.","image":"/media/Collection060.png","imageAlt":"Mustang Garage editorial feature"},
+      "sections":[{"id":"editorial","heading":"The Journal","body":"History. Character. A little attitude."}]
+    },
+    {
+      "key": "privacy",
+      "title": "Privacy Policy",
+      "intro": "This draft identifies the information that needs to be explained before a Privacy Policy is published. It does not establish verified production data practices or a statement of compliance.",
+      "sections": [
+        {
+          "id": "responsible-business",
+          "heading": "Who is responsible",
+          "body": "Mustang Garage is the name displayed by this website. The legal entity responsible for operating it and handling personal information has not been confirmed.\n\nBusiness name, registered address, and privacy contact: [To be confirmed by the business].\n\nTo confirm: Confirm the legal operator, relevant business locations, and an approved privacy contact. A brand name alone does not identify the responsible entity."
+        },
+        {
+          "id": "information",
+          "heading": "Information and interactions",
+          "body": "The interface includes car browsing, saved selections, recently viewed cars, email inquiry links, and a newsletter form. Which information reaches the business or its providers must be confirmed against the live service.\n\nThe inspected newsletter form displays an on-screen message, but its handler does not submit a subscription request. Email collection, subscription records, and delivery arrangements therefore remain unverified.\n\nTo confirm: Inventory all information collected in production, its sources, and which forms or services actually receive it. Do not publish the prototype newsletter confirmation as proof of a completed subscription."
+        },
+        {
+          "id": "browser-storage",
+          "heading": "Browser storage and preferences",
+          "body": "In the inspected client, recently viewed car IDs are kept in browser local storage, with an in-memory fallback when storage is unavailable. Saved-car IDs are currently held in application state.\n\nThese observations do not establish the full production cookie or tracking setup. Hosting, embedded content, analytics, and other services need a separate review.\n\nTo confirm: Confirm every cookie and storage item, its purpose and lifespan, and any applicable choice or consent requirements. Explain browser controls after the deployed configuration is verified."
+        },
+        {
+          "id": "uses-and-providers",
+          "heading": "Purposes, providers, and sharing",
+          "body": "The current contact form prepares an email containing the entered name, reply email, topic, optional car selection, and message. It opens an email app and does not submit the form to a website server or confirm delivery. Direct inquiry links also open an email app. Any message the visitor then sends uses the email services involved; the business must identify its actual email arrangements.\n\nOther purposes, legal grounds where applicable, service providers, recipients, and processing locations are not confirmed by this draft. No claim about selling, sharing, or not sharing information is made here.\n\nTo confirm: Confirm each purpose, the applicable legal grounds, recipients, vendors, processing locations, and any cross-border arrangements."
+        },
+        {
+          "id": "retention-and-security",
+          "heading": "Retention and security",
+          "body": "Retention periods for inquiries, subscriptions, logs, and any other records have not been established. The handling of deletion, backups, and access permissions also requires confirmation.\n\nThis draft makes no guarantee about security measures or outcomes. The published notice should accurately describe the safeguards and record-management practices the business uses.\n\nTo confirm: Approve category-specific retention rules, deletion processes, actual safeguards, and any relevant incident-response disclosures."
+        },
+        {
+          "id": "choices-and-requests",
+          "heading": "Choices, requests, and questions",
+          "body": "The rights, choices, complaint options, and request procedures relevant to visitors depend on the applicable law and the actual service. They have not been determined here.\n\nPrivacy request channel, identity-check procedure, and applicable response periods: [To be confirmed after legal review].\n\nTo confirm: Confirm the intended audience, applicable laws, treatment of childrenâ€™s information, request handling, marketing preferences, and appropriate complaint contacts. Set an effective date only after approval."
+        }
+      ]
+    },
+    {
+      "key": "terms",
+      "title": "Terms & Conditions",
+      "intro": "This is a structured draft for business and legal review. It is not a finalized agreement, a vehicle sale contract, or a statement that visitors have accepted terms.",
+      "sections": [
+        {
+          "id": "operator-and-scope",
+          "heading": "Operator and scope",
+          "body": "Mustang Garage is the brand shown on this site. The legal operator, business address, territories served, and scope of the service require confirmation.\n\nContracting entity and approved business contact: [To be confirmed].\n\nTo confirm: Identify the correct operator, customer audience, service locations, and whether the website is for browsing, introductions, reservations, sales, or other services."
+        },
+        {
+          "id": "listings-and-editorial",
+          "heading": "Vehicle listings and editorial content",
+          "body": "The current project includes sample inventory and explicitly labeled sample editorial content. A displayed photograph, label, or article should not be treated as independent verification of a vehicleâ€™s history or condition.\n\nThe business must approve how live listings are prepared and how visitors are told about price changes, availability, errors, and vehicle-specific information. This draft does not create an accuracy warranty or exclude one.\n\nTo confirm: Confirm live data ownership, image rights, listing checks, pricing presentation, taxes and fees, availability updates, and the treatment of errors."
+        },
+        {
+          "id": "inquiries-and-transactions",
+          "heading": "Inquiries and transactions",
+          "body": "The inspected car inquiry action opens an email link. The project does not establish the business process for accepting an order or completing a vehicle transaction.\n\nReservations, deposits, payment methods, delivery, collection, title transfer, cancellations, and refunds are not defined by this draft. They require approved terms appropriate to the actual transaction.\n\nTo confirm: Specify when an agreement is formed, who sells the vehicle, and the approved transaction documents, payment, delivery, cancellation, and refund rules."
+        },
+        {
+          "id": "site-features",
+          "heading": "Saved cars and site features",
+          "body": "Saved selections currently use application state, while recent browsing history may use browser storage. These features help visitors revisit inventory; the current interface does not provide an account-based guarantee of synchronization or persistence.\n\nAny account service, marketing subscription, availability notification, or other additional feature needs its own verified description and appropriate terms.\n\nTo confirm: Confirm intended feature behavior, support arrangements, subscription handling, and any accounts or paid services before describing obligations."
+        },
+        {
+          "id": "content-and-use",
+          "heading": "Content, links, and use of the site",
+          "body": "Ownership and permitted use of the brand, photographs, articles, and other content must be checked. This draft does not grant a license or assert ownership of third-party material.\n\nRules for acceptable use, external links, user submissions, and content removal have not been approved. They should reflect the actual services rather than generic restrictions.\n\nTo confirm: Confirm intellectual-property rights, permissions, external services, submission practices, and any reasonable site-use rules with counsel."
+        },
+        {
+          "id": "legal-protections",
+          "heading": "Warranties, responsibility, and disputes",
+          "body": "No warranty exclusions, liability limits, indemnities, dispute procedure, governing law, or court jurisdiction are selected in this draft.\n\nThese provisions depend on the business, transaction type, audience, and applicable mandatory protections. Approved language is required before publication.\n\nTo confirm: Obtain jurisdiction-specific review. Confirm applicable consumer protections and appropriate warranty, liability, and dispute provisions without assuming they can be waived."
+        },
+        {
+          "id": "approval-and-contact",
+          "heading": "Approval, updates, and contact",
+          "body": "Effective date, version, change-notice process, and any acceptance mechanism: [Pending business approval and legal review].\n\nAn approved contact channel for contractual questions has not been designated. Existing site email links should be checked before they are named as a formal legal notice address.\n\nTo confirm: Approve the final text, effective date, notice and acceptance process, and responsible business contact. Keep the published version aligned with the live service."
+        }
+      ]
+    }
+  ]
+}

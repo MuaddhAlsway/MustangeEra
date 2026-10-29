@@ -1,0 +1,29 @@
+.mg-admin .mg-recent-activity{min-width:0;padding:0;overflow:hidden;border:1px solid #596047;border-top:2px solid #c49b6d;background:#1b2117}
+.mg-recent-activity__header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 28px 16px}
+.mg-recent-activity .mg-recent-activity__eyebrow{margin:0 0 10px;color:#c3a581;font:500 8px/1.8 var(--font-meta);letter-spacing:.09em}
+.mg-admin .mg-recent-activity__header h2{margin:0;color:#eee3ce;font:600 clamp(32px,3.4vw,46px)/1.05 var(--font-display);letter-spacing:-.025em}
+.mg-recent-activity__header h2 em{font-weight:500;color:#d1ae81}
+.mg-recent-activity__mark{display:grid;place-items:center;flex-shrink:0;width:46px;height:46px;border:1px solid #72684b;color:#c6a77e;background:#2a2c1f}
+.mg-recent-activity__intro{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin:0 28px;padding-bottom:22px;border-bottom:1px solid #535940}
+.mg-recent-activity__intro p{color:#aeb59a;font:400 11px/1.8 var(--font-body)}
+.mg-recent-activity__intro>span{padding:4px 8px;border:1px solid #575e43;color:#d4c4a4;background:#252c1d;font:400 8px/1.7 var(--font-meta);letter-spacing:.04em;white-space:nowrap}
+.mg-recent-activity__scroll{max-height:510px;overflow:auto;scrollbar-width:thin;scrollbar-color:#7d7956 #1b2117;overscroll-behavior:contain}
+.mg-recent-activity__scroll:focus-visible{outline:2px solid #d3af7d;outline-offset:-4px}
+.mg-recent-activity__list{list-style:none;padding:6px 28px 18px;margin:0}
+.mg-recent-activity__entry{position:relative;display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:16px;align-items:start;padding:22px 0}
+.mg-recent-activity__entry:not(:last-child)::before{position:absolute;top:45px;bottom:-22px;left:12px;width:1px;background:#586044;content:''}
+.mg-recent-activity__entry:not(:last-child)::after{position:absolute;bottom:0;right:0;left:42px;height:1px;background:#3d4731;content:''}
+.mg-recent-activity__node{position:relative;z-index:1;display:grid;place-items:center;width:26px;height:26px;border:1px solid #8c7b54;background:#292d1e;color:#dbc092}
+.mg-recent-activity__entry:first-child .mg-recent-activity__node{color:#f4d6ad;border-color:#c69c68;background:#443724}
+.mg-recent-activity__record{min-width:0;padding-top:1px}
+.mg-recent-activity__number{display:block;margin-bottom:7px;color:#a4ae8d;font:400 8px/1.8 var(--font-meta);letter-spacing:.05em}
+.mg-recent-activity .mg-recent-activity__record p{margin:0;color:#e2dcc6;font:500 12px/1.85 var(--font-body);overflow-wrap:anywhere;transition:color 180ms ease}
+.mg-recent-activity__time{display:grid;gap:5px;justify-items:end;max-width:130px;padding-top:1px;color:#b0b398;font:400 8px/1.8 var(--font-meta);text-align:right;font-variant-numeric:tabular-nums}
+.mg-recent-activity__time strong{color:#cfb791;font-size:10px;font-weight:500}
+.mg-recent-activity__footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:16px 28px;border-top:1px solid #4f563d;background:#20271a;color:#a8ad91;font:400 7px/1.8 var(--font-meta);letter-spacing:.05em}
+.mg-recent-activity__empty{display:grid;justify-items:start;gap:16px;padding:38px 28px 44px;color:#c1aa82}
+.mg-admin .mg-recent-activity__empty h3{color:#ddd4bd;font:500 28px/1.15 var(--font-display)}
+.mg-recent-activity__empty p{max-width:36ch;color:#aab497;font:400 12px/1.9 var(--font-body)}
+@media(hover:hover){.mg-recent-activity__entry:hover .mg-recent-activity__record p{color:#efc594}}
+@media(max-width:600px){.mg-recent-activity__header{padding:24px 20px 16px}.mg-recent-activity__intro{margin-inline:20px}.mg-recent-activity__list{padding-inline:20px}.mg-recent-activity__entry{grid-template-columns:26px minmax(0,1fr);gap:10px 14px}.mg-recent-activity__time{grid-column:2;display:flex;justify-items:start;gap:12px;max-width:none;text-align:left}.mg-recent-activity__time strong{font-size:8px}.mg-recent-activity__footer{padding-inline:20px}.mg-recent-activity__empty{padding-inline:20px}}
+@media(prefers-reduced-motion:reduce){.mg-recent-activity__record p{transition:none}}

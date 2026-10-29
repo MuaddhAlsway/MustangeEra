@@ -1,0 +1,5 @@
+import './environment.js';
+import mongoose from 'mongoose';
+import { createApp } from './app.js';
+if(!process.env.MONGODB_URI)throw new Error('MONGODB_URI must be configured. See .env.example.');
+try{await mongoose.connect(process.env.MONGODB_URI,{serverSelectionTimeoutMS:10000});const server=createApp().listen(Number(process.env.PORT??4000),()=>console.info('Mustang Garage API is ready.'));for(const signal of ['SIGTERM','SIGINT'])process.on(signal,()=>{server.close(()=>{void mongoose.disconnect().then(()=>process.exit(0));});});}catch(error){const mongoError=error as {name?:string;code?:number;message?:string};const authenticationFailure=mongoError.name==='MongoServerError'&&mongoError.code===8000&&/auth/i.test(mongoError.message??'');console.error(authenticationFailure?'MongoDB authentication failed. Check the Atlas Database Access username/password, URL-encode special characters in the password, and confirm the user has readWrite access to the selected database.':'API startup failed. Check MongoDB connectivity and the database IP access list.',{type:error instanceof Error?error.name:'Error',code:mongoError.code??'unknown'});process.exitCode=1;}

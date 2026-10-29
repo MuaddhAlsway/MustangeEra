@@ -1,0 +1,17 @@
+import { z } from 'zod';
+const line = z.string().trim().min(1).max(250).refine(value => !/[\r\n]/.test(value),'Use a single line');
+const image = z.string().max(2000).refine(v => !v || /^https:\/\//.test(v) || /^\/media\/(?:[a-zA-Z0-9_.-]+|uploads\/[a-f\d]{24})$/i.test(v),'Use an HTTPS image or a project/MongoDB media URL');
+export const carSchema = z.object({year:z.number().int().min(1886).max(2100),make:line,model:line,trim:line,price:z.number().nonnegative().max(1e10),miles:line,power:line,type:line,color:line,image,tag:line,location:line,description:z.string().trim().min(1).max(30000),status:z.enum(['Listed','Draft','Archived'])});
+export const articleSchema=z.object({slug:z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).max(160),title:line,category:line,excerpt:z.string().trim().min(1).max(3000),image,imageAlt:z.string().max(250).optional(),body:z.string().trim().min(1).max(100000),status:z.enum(['Draft','Published'])});
+const pageSection=z.object({id:z.string().regex(/^[a-z0-9-]+$/).max(100),heading:line,body:z.string().trim().min(1).max(20000),image:image.optional(),imageAlt:z.string().max(250).optional()});
+const heroSlide=z.object({image,imageAlt:z.string().max(250).optional(),issue:z.string().max(10),label:z.string().max(250),kicker:z.string().max(250),title:z.string().max(250),accent:z.string().max(250),description:z.string().max(5000),year:z.string().max(10),model:z.string().max(250)});
+const pageHero=z.object({eyebrow:z.string().max(250).optional(),title:z.string().max(250).optional(),accent:z.string().max(250).optional(),description:z.string().max(5000).optional(),image:image.optional(),imageAlt:z.string().max(250).optional(),slides:z.array(heroSlide).length(3).optional()});
+export const pageSchema=z.object({title:line,intro:z.string().trim().min(1).max(5000),hero:pageHero.optional(),sections:z.array(pageSection).min(1).max(30),status:z.enum(['Draft','Published'])}).refine(p => new Set(p.sections.map(s=>s.id)).size===p.sections.length,'Section IDs must be unique');
+export const contactSchema=z.object({name:line,email:z.email().max(254).transform(v=>v.toLowerCase()),subject:line,message:z.string().trim().min(10).max(10000),carId:z.number().int().positive().optional()});
+export const consentText='I agree to receive Mustang Garage newsletter emails and understand I can unsubscribe.';
+export const newsletterSchema=z.object({email:z.email().max(254).transform(v=>v.toLowerCase()),name:z.string().trim().max(250).default(''),consent:z.literal(true),consentVersion:z.literal('newsletter-v1')});
+export const replySchema=z.object({recipient:z.email().max(254),subject:line,message:z.string().trim().min(1).max(10000)});
+export const objectId=z.string().regex(/^[a-f\d]{24}$/i);
+export const pageKey=z.enum(['home','about','contact','inventory','journal','privacy','terms']);
+export const pagination=z.object({page:z.coerce.number().int().min(1).max(10000).default(1),limit:z.coerce.number().int().min(1).max(100).default(24),q:z.string().max(200).default(''),status:z.string().max(30).optional()});
+export function sectionsFromText(body:string) { const sections:{heading:string;paragraphs:string[]}[]=[]; for(const block of body.split(/\n\s*\n/)){ if(/^#{1,3} /.test(block)) sections.push({heading:block.replace(/^#{1,3} /,''),paragraphs:[]}); else { if(!sections.length)sections.push({heading:'The story',paragraphs:[]});sections.at(-1)!.paragraphs.push(block); } } return sections; }
