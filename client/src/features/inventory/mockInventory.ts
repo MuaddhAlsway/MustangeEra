@@ -2,7 +2,7 @@ import type { Car } from './types';
 import collection01 from '../../assets/Collection010.webp'
 import collection02 from '../../assets/Collection090.webp'
 import collection03 from '../../assets/Collection030.webp'
-import collection04 from '../../assets/Collection040.webp'
+import collection04 from '../../assets/collection040.webp'
 import collection05 from '../../assets/Collection080.webp'
 import collection06 from '../../assets/Collection060.webp'
 

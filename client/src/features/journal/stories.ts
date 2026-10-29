@@ -1,5 +1,5 @@
 import bossImage from '../../assets/Collection010.webp';
-import bigBlockImage from '../../assets/Collection040.webp';
+import bigBlockImage from '../../assets/collection040.webp';
 import recordsImage from '../../assets/Collection030.webp';
 import roadImage from '../../assets/Collection090.webp';
 
