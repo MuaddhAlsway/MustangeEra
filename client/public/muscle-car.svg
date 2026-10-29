@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="muscle-car-title">
+  <title id="muscle-car-title">Mustang Garage muscle car</title>
+  <path fill="#182115" stroke="#a98458" stroke-width="1.5" d="M10 3h44l7 7v44l-7 7H10l-7-7V10z"/>
+  <path stroke="#655d43" d="M13 9h38M13 55h38"/>
+  <path fill="#293723" stroke="#e7d5b3" stroke-linejoin="round" stroke-width="2" d="m13 29 6-11a5 5 0 0 1 4-2h18a5 5 0 0 1 4 2l6 11"/>
+  <path fill="#10180e" stroke="#9a9572" stroke-linejoin="round" stroke-width="1.5" d="m19 28 4-8h18l4 8z"/>
+  <path fill="#151b11" d="M11 45h9v9h-9zM44 45h9v9h-9z"/>
+  <path fill="#34412a" stroke="#e7d5b3" stroke-linejoin="round" stroke-width="2" d="M13 28h38l6 7v12H7V35z"/>
+  <path fill="#c38b56" d="M28 29h3v7h-3zM33 29h3v7h-3z"/>
+  <path stroke="#b69c73" stroke-linecap="round" stroke-width="1.5" d="m12 32 9 1m22 0 9-1"/>
+  <circle cx="16" cy="38" r="4.5" fill="#f0e6cb" stroke="#b68a58" stroke-width="1.5"/>
+  <circle cx="48" cy="38" r="4.5" fill="#f0e6cb" stroke="#b68a58" stroke-width="1.5"/>
+  <path fill="#10180d" stroke="#b9a57c" stroke-width="1.5" d="M24 35h16v8H24z"/>
+  <path stroke="#7c8866" stroke-width="1.2" d="M27 37v4m3-4v4m4-4v4m3-4v4"/>
+  <path stroke="#e0c69b" stroke-linecap="round" stroke-width="2" d="M12 47h40"/>
+  <path fill="#bd8050" d="M26 47h12v4H26z"/>
+</svg>

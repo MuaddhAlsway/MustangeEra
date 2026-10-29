@@ -1,5 +1,5 @@
 import { AccountControl } from '../../lib/Auth';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ArrowUpRight, Heart, Menu, X } from 'lucide-react';
 import '../../styles/Navbar.css';
@@ -10,10 +10,22 @@ type NavbarProps = {
 
 export default function Navbar({ savedCount = 0 }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const toggleRef=useRef<HTMLButtonElement>(null);
+  useEffect(()=>{
+    if(!menuOpen)return;
+    const mobile=window.matchMedia('(max-width: 1400px)');
+    const previousOverflow=document.body.style.overflow;
+    if(mobile.matches)document.body.style.overflow='hidden';
+    const onKeyDown=(event:KeyboardEvent)=>{if(event.key==='Escape'){setMenuOpen(false);toggleRef.current?.focus();}};
+    const onResize=()=>{if(!mobile.matches)setMenuOpen(false);};
+    document.addEventListener('keydown',onKeyDown);
+    mobile.addEventListener('change',onResize);
+    return()=>{document.body.style.overflow=previousOverflow;document.removeEventListener('keydown',onKeyDown);mobile.removeEventListener('change',onResize);};
+  },[menuOpen]);
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="mg-navbar">
+    <header className={`mg-navbar${menuOpen?' is-menu-open':''}`} onBlurCapture={event=>{if(menuOpen&&event.relatedTarget instanceof Node&&!event.currentTarget.contains(event.relatedTarget))closeMenu();}}>
       <NavLink
         className="mg-navbar__brand"
         to="/" end
@@ -21,12 +33,7 @@ export default function Navbar({ savedCount = 0 }: NavbarProps) {
         onClick={closeMenu}
       >
         <span className="mg-navbar__mark" aria-hidden="true">
-          <span className="mg-navbar__mark-letter">M</span>
-          <span className="mg-navbar__mark-lines">
-            <i />
-            <i />
-            <i />
-          </span>
+          <img className="mg-navbar__car-icon" src="/muscle-car.svg" alt="" width={40} height={40}/>
         </span>
 
         <span className="mg-navbar__wordmark">
@@ -36,6 +43,8 @@ export default function Navbar({ savedCount = 0 }: NavbarProps) {
           </span>
         </span>
       </NavLink>
+
+      {menuOpen&&<button type="button" className="mg-navbar__backdrop" tabIndex={-1} aria-label="Close navigation menu" onClick={closeMenu}/>}
 
       <nav
         className={`mg-navbar__links${menuOpen ? ' is-open' : ''}`}
@@ -81,6 +90,7 @@ export default function Navbar({ savedCount = 0 }: NavbarProps) {
       </div>
 
       <button
+        ref={toggleRef}
         className="mg-navbar__toggle"
         type="button"
         aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}

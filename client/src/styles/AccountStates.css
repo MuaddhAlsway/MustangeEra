@@ -35,7 +35,6 @@
 .mg-navbar__saved { min-height: 44px; }
 .mg-navbar__saved:focus-visible { outline: 2px solid #edbc84; outline-offset: 4px; }
 .mg-navbar__saved svg { color: #dc9a70; fill: #dc9a7024; }
-.mg-navbar .mg-navbar__links { gap: clamp(12px, 1.5vw, 24px); }
 
 /* Quiet, classic editorial composition for account verification and errors. */
 .mg-access-screen, .mg-access-screen * { box-sizing: border-box; }
@@ -89,8 +88,7 @@
 .mg-admin .mg-signout--admin:hover { color: #ffebd0; background: #493622; border-color: #c19c6d; }
 @keyframes mg-account-spin { to { transform: rotate(360deg); } }
 @keyframes mg-record-sheen { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
-@media (max-width: 1280px) {
-  .mg-navbar .mg-navbar__links { gap: 0; }
+@media (max-width: 1400px) {
   .mg-navbar .mg-signout--nav { width: fit-content; margin-top: 14px; padding-inline: 18px; }
 }
 @media (max-width: 600px) {
